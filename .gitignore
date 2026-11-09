@@ -1,0 +1,23 @@
+# Material original do restaurante (fotografias, ficha, ementa de origem).
+# O site usa as cópias preparadas em assets/; os originais ficam fora do git.
+conteudo/
+
+# Impeccable: ficheiros locais e de trabalho
+# (fica no git: .impeccable/config.json, .impeccable/design.json, .impeccable/surfaces/)
+.impeccable/config.local.json
+.impeccable/hook.cache.json
+.impeccable/questions/
+.impeccable/mocks/
+.impeccable/review/
+.impeccable/scratch/
+.impeccable/build/
+.impeccable/live/
+
+# Ferramentas locais do Claude Code (skills, agentes, configuração desta máquina)
+.claude/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/

@@ -1,0 +1,98 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/assigned.html"
+        ],
+        "createdAt": "2026-11-09T03:44:28.398Z",
+        "reason": "Claude: decision sketch; radial gradients draw the plate and egg yolks, not a background glow"
+      },
+      {
+        "rule": "wide-tracking",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/model-pick.html"
+        ],
+        "createdAt": "2026-11-09T03:44:28.641Z",
+        "reason": "Claude: decision sketch; tracking is on the short uppercase label MESA Nº, not body text"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-09T03:52:05.165Z",
+        "reason": "Claude: zero-offset inset rings draw the ceramic plate rim, and the offset dark-brown drop shadows are the plate's shadow on the brown tablecloth, not glows"
+      },
+      {
+        "rule": "repeating-stripes-gradient",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-09T03:59:06.345Z",
+        "reason": "Claude: the faint repeating gradients are the tablecloth weave texture of the committed world (toalha), at 3-7% alpha"
+      },
+      {
+        "rule": "repeating-stripes-gradient",
+        "value": "*",
+        "files": [
+          "ementa.html"
+        ],
+        "createdAt": "2026-11-09T03:59:06.598Z",
+        "reason": "Claude: tablecloth weave texture shared by both pages"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "ementa.html"
+        ],
+        "createdAt": "2026-11-09T03:59:06.830Z",
+        "reason": "Claude: offset dark-brown shadows of paper and index strip on the brown tablecloth, not glows"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-09T03:59:07.063Z",
+        "reason": "Claude: round plates inset text to 70% width and photos to a 13% well; onde__papel has 20-36px padding; detector misreads the circular geometry"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "ementa.html"
+        ],
+        "createdAt": "2026-11-09T03:59:07.304Z",
+        "reason": "Claude: .carta has 18-52px padding on every side; verified in captures"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "georgia",
+        "files": [
+          ".impeccable/mocks/decision/assigned.html"
+        ],
+        "createdAt": "2026-11-09T04:10:34.913Z",
+        "reason": "Claude: spent decision sketch, written before DESIGN.md; not shipped"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "georgia",
+        "files": [
+          ".impeccable/mocks/decision/model-pick.html"
+        ],
+        "createdAt": "2026-11-09T04:10:35.146Z",
+        "reason": "Claude: spent decision sketch, written before DESIGN.md; not shipped"
+      }
+    ]
+  }
+}

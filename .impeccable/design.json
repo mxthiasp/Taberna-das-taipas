@@ -1,0 +1,497 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-09T04:12:20.022Z",
+  "title": "Design System: Taberna das Taipas",
+  "extensions": {
+    "colorMeta": {
+      "toalha": {
+        "role": "neutral",
+        "displayName": "Castanho-toalha",
+        "canonical": "#86401e",
+        "oklch": "oklch(45.6% 0.107 44.5)",
+        "tonalRamp": [
+          "#1c0300",
+          "#3e1704",
+          "#622f17",
+          "#8a4a2c",
+          "#af6849",
+          "#cc8d72",
+          "#ecb69f",
+          "#ffe4d2"
+        ]
+      },
+      "toalha-funda": {
+        "role": "neutral",
+        "displayName": "Toalha funda",
+        "canonical": "#6e3418",
+        "oklch": "oklch(39.7% 0.092 44.5)",
+        "tonalRamp": [
+          "#1a0400",
+          "#3a190a",
+          "#5e321e",
+          "#844d34",
+          "#a96c51",
+          "#c69078",
+          "#e7b8a5",
+          "#ffe6d6"
+        ]
+      },
+      "creme": {
+        "role": "neutral",
+        "displayName": "Creme do logótipo",
+        "canonical": "#f0d5ab",
+        "oklch": "oklch(88.5% 0.063 78.7)",
+        "tonalRamp": [
+          "#120900",
+          "#2e220c",
+          "#4e3d21",
+          "#6f5a37",
+          "#917954",
+          "#b09b7b",
+          "#d3c2a7",
+          "#faedd8"
+        ]
+      },
+      "creme-suave": {
+        "role": "neutral",
+        "displayName": "Creme suave",
+        "canonical": "#e8c9a0",
+        "oklch": "oklch(85.2% 0.064 74.5)",
+        "tonalRamp": [
+          "#130900",
+          "#30210c",
+          "#4f3c20",
+          "#715937",
+          "#937854",
+          "#b29a7b",
+          "#d5c1a6",
+          "#fcecd8"
+        ]
+      },
+      "louca": {
+        "role": "neutral",
+        "displayName": "Grés",
+        "canonical": "#f7eedd",
+        "oklch": "oklch(95.2% 0.025 83.4)",
+        "tonalRamp": [
+          "#0e0b06",
+          "#28231c",
+          "#453f35",
+          "#645d50",
+          "#847c6e",
+          "#a49e91",
+          "#c9c3b9",
+          "#f2eee6"
+        ]
+      },
+      "aro": {
+        "role": "neutral",
+        "displayName": "Aro de grés",
+        "canonical": "#a8622c",
+        "oklch": "oklch(56.5% 0.113 55.3)",
+        "tonalRamp": [
+          "#1b0300",
+          "#3d1800",
+          "#623105",
+          "#894c1a",
+          "#ae6b39",
+          "#cb8f66",
+          "#ebb896",
+          "#ffe6cc"
+        ]
+      },
+      "papel": {
+        "role": "neutral",
+        "displayName": "Papel",
+        "canonical": "#fbf4e6",
+        "oklch": "oklch(96.9% 0.020 84.6)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#27241d",
+          "#433f37",
+          "#625d52",
+          "#827d71",
+          "#a39e93",
+          "#c8c4bb",
+          "#f1eee7"
+        ]
+      },
+      "papel-linha": {
+        "role": "neutral",
+        "displayName": "Linha de papel",
+        "canonical": "#e3d2b4",
+        "oklch": "oklch(87.0% 0.044 81.9)",
+        "tonalRamp": [
+          "#100a03",
+          "#2b2314",
+          "#493e2b",
+          "#695c44",
+          "#8a7b61",
+          "#aa9d86",
+          "#cec3af",
+          "#f6eddf"
+        ]
+      },
+      "tinta": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "#3a1d0f",
+        "oklch": "oklch(26.7% 0.051 45.6)",
+        "tonalRamp": [
+          "#140804",
+          "#311f17",
+          "#52392e",
+          "#745648",
+          "#977565",
+          "#b59789",
+          "#d8beb2",
+          "#feeae1"
+        ]
+      },
+      "tinta-suave": {
+        "role": "neutral",
+        "displayName": "Tinta suave",
+        "canonical": "#6b4630",
+        "oklch": "oklch(43.1% 0.061 51.2)",
+        "tonalRamp": [
+          "#150702",
+          "#331e12",
+          "#543828",
+          "#775540",
+          "#9a745e",
+          "#b89683",
+          "#dabdad",
+          "#ffe9dd"
+        ]
+      },
+      "gema": {
+        "role": "primary",
+        "displayName": "Laranja-gema",
+        "canonical": "#b6400c",
+        "oklch": "oklch(53.2% 0.163 39.5)",
+        "tonalRamp": [
+          "#230000",
+          "#490600",
+          "#731e00",
+          "#9f3607",
+          "#c7562d",
+          "#e3805e",
+          "#ffac90",
+          "#ffddc7"
+        ]
+      },
+      "gema-funda": {
+        "role": "primary",
+        "displayName": "Gema funda",
+        "canonical": "#96340a",
+        "oklch": "oklch(46.2% 0.140 39.5)",
+        "tonalRamp": [
+          "#200000",
+          "#450e00",
+          "#6d2609",
+          "#973e1e",
+          "#be5d3c",
+          "#da8568",
+          "#f8b098",
+          "#ffe0cd"
+        ]
+      },
+      "gema-texto": {
+        "role": "primary",
+        "displayName": "Texto sobre gema",
+        "canonical": "#fff6e8",
+        "oklch": "oklch(97.6% 0.021 79.1)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#27231d",
+          "#443f36",
+          "#635d52",
+          "#847c70",
+          "#a49d93",
+          "#c9c3ba",
+          "#f2eee7"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Título de abertura de cada página (telemóvel)."
+      },
+      "display-largo": {
+        "displayName": "Display largo",
+        "purpose": "Título de abertura a partir de 60rem."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Títulos de secção sobre a toalha; grupos da ementa sobre papel usam clamp(2.6rem, 11vw, 4rem)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Categorias da ementa; blocos de papel e talão usam 1.4–1.65rem."
+      },
+      "title-sm": {
+        "displayName": "Title pequeno",
+        "purpose": "Nome do prato nas legendas e nos pratos só com texto."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto corrido, medida 30–40ch."
+      },
+      "body-sm": {
+        "displayName": "Body pequeno",
+        "purpose": "Metadados, notas, horas do talão."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Botões."
+      },
+      "nav": {
+        "displayName": "Nav",
+        "purpose": "Cabeçalho e índice da ementa."
+      },
+      "preco": {
+        "displayName": "Preço",
+        "purpose": "Todos os preços; algarismos tabulares, sem quebra."
+      }
+    },
+    "shadows": [
+      {
+        "name": "toalha-sombra",
+        "value": "rgb(42 14 2 / 0.55)",
+        "purpose": "Cor base das sombras de objetos pousados."
+      },
+      {
+        "name": "louca",
+        "value": "0 1.4rem 2.2rem -0.9rem rgb(42 14 2 / 0.55), 0 0.3rem 0.6rem -0.2rem rgb(42 14 2 / 0.35)",
+        "purpose": "Pratos e travessas."
+      },
+      {
+        "name": "aro",
+        "value": "inset 0 0 0 var(--aro-w, 0.55rem) var(--aro), inset 0 0 0 calc(var(--aro-w, 0.55rem) + 2px) rgb(90 40 10 / 0.25)",
+        "purpose": "Aro castanho da louça."
+      },
+      {
+        "name": "poco",
+        "value": "inset 0 0.25rem 0.8rem rgb(60 25 5 / 0.35)",
+        "purpose": "Poço côncavo da fotografia no prato."
+      },
+      {
+        "name": "papel",
+        "value": "0 1.4rem 2.4rem -1.2rem rgb(42 14 2 / 0.55), 0 0.2rem 0.5rem rgb(42 14 2 / 0.25)",
+        "purpose": "Blocos de papel e folha da ementa."
+      },
+      {
+        "name": "talao-fixo",
+        "value": "0 -0.6rem 1.6rem -0.4rem rgb(42 14 2 / 0.45)",
+        "purpose": "Talão preso ao fundo no telemóvel."
+      },
+      {
+        "name": "talao-flutuante",
+        "value": "0 1.2rem 2.4rem -0.8rem rgb(42 14 2 / 0.6)",
+        "purpose": "Talão no canto a partir de 48rem."
+      },
+      {
+        "name": "indice-tira",
+        "value": "0 0.6rem 1rem -0.6rem rgb(42 14 2 / 0.6)",
+        "purpose": "Tira do índice presa ao topo no telemóvel."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-saida",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Única curva: deslize dos pratos e transições de estado."
+      },
+      {
+        "name": "chega-abertura",
+        "value": "900ms ease-saida (prato pequeno com 120ms de atraso)",
+        "purpose": "Pratos da abertura deslizam para o centro ao carregar; só translate e rotate."
+      },
+      {
+        "name": "chega-scroll",
+        "value": "animation-timeline: view(); animation-range: entry 0% entry 75%",
+        "purpose": "Pratos da mesa deslizam da esquerda ou da direita ao entrar no ecrã."
+      },
+      {
+        "name": "estado",
+        "value": "200ms ease-saida",
+        "purpose": "Fundo e descida de 1px dos botões."
+      },
+      {
+        "name": "reduzido",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Sem deslize e sem scroll suave."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "talao-canto",
+        "value": "48rem"
+      },
+      {
+        "name": "largo",
+        "value": "60rem"
+      }
+    ],
+    "textures": [
+      {
+        "name": "trama",
+        "value": "repeating-linear-gradient(0deg, rgb(40 12 0 / 0.07) 0 1px, transparent 1px 4px), repeating-linear-gradient(90deg, rgb(255 230 200 / 0.035) 0 1px, transparent 1px 5px)",
+        "purpose": "Fio da toalha sobre o fundo."
+      },
+      {
+        "name": "pintas",
+        "value": "url(assets/img/pintas.svg) / 220px",
+        "purpose": "Pintas do grés em pratos e travessas."
+      },
+      {
+        "name": "picotado",
+        "value": "mask: radial-gradient(circle at 50% 0, transparent 0.32rem, #000 0.34rem) top / 0.9rem 100% repeat-x",
+        "purpose": "Topo perfurado do talão."
+      },
+      {
+        "name": "por-confirmar",
+        "value": "text-decoration: underline dashed; text-decoration-thickness: 1.5px; text-underline-offset: 0.28em",
+        "purpose": "Marca de dado por confirmar, sempre com sufixo sr-only."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão Reservar (gema)",
+      "kind": "button",
+      "refersTo": "button-reservar",
+      "description": "Única ação em laranja-gema: reservar no TheFork, dentro do talão.",
+      "html": "<div style=\"background:#fbf4e6;padding:1rem\"><a class=\"ds-btn ds-btn-gema\" href=\"#\">Reservar no TheFork</a></div>",
+      "css": ":root{--toalha:#86401e;--toalha-funda:#6e3418;--toalha-sombra:rgb(42 14 2 / 0.55);--creme:#f0d5ab;--creme-suave:#e8c9a0;--louca:#f7eedd;--aro:#a8622c;--papel:#fbf4e6;--papel-linha:#e3d2b4;--tinta:#3a1d0f;--tinta-suave:#6b4630;--gema:#b6400c;--gema-funda:#96340a;--gema-texto:#fff6e8;--letra-titulo:\"Bubblegum Sans\",\"Trebuchet MS\",sans-serif;--letra-texto:\"Figtree\",system-ui,-apple-system,\"Segoe UI\",sans-serif;--ease-saida:cubic-bezier(0.16,1,0.3,1);} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:0.45rem;min-height:48px;padding:0 1.25rem;border-radius:4px;font:750 1.02rem/1 var(--letra-texto);text-decoration:none;border:0;cursor:pointer;transition:background-color 200ms var(--ease-saida),translate 200ms var(--ease-saida);} .ds-btn:active{translate:0 1px;} .ds-btn svg{width:1.1rem;height:1.1rem;flex:none;} .ds-btn-gema{background:var(--gema);color:var(--gema-texto);} .ds-btn-gema:hover{background:var(--gema-funda);} .ds-btn:focus-visible{outline:3px solid var(--tinta);outline-offset:3px;}"
+    },
+    {
+      "name": "Botão de linha",
+      "kind": "button",
+      "refersTo": "button-linha",
+      "description": "Ação secundária sobre papel: ligar.",
+      "html": "<div style=\"background:#fbf4e6;padding:1rem\"><a class=\"ds-btn ds-btn-linha\" href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z\"/></svg> Ligar</a></div>",
+      "css": ":root{--toalha:#86401e;--toalha-funda:#6e3418;--toalha-sombra:rgb(42 14 2 / 0.55);--creme:#f0d5ab;--creme-suave:#e8c9a0;--louca:#f7eedd;--aro:#a8622c;--papel:#fbf4e6;--papel-linha:#e3d2b4;--tinta:#3a1d0f;--tinta-suave:#6b4630;--gema:#b6400c;--gema-funda:#96340a;--gema-texto:#fff6e8;--letra-titulo:\"Bubblegum Sans\",\"Trebuchet MS\",sans-serif;--letra-texto:\"Figtree\",system-ui,-apple-system,\"Segoe UI\",sans-serif;--ease-saida:cubic-bezier(0.16,1,0.3,1);} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:0.45rem;min-height:48px;padding:0 1.25rem;border-radius:4px;font:750 1.02rem/1 var(--letra-texto);text-decoration:none;border:0;cursor:pointer;transition:background-color 200ms var(--ease-saida),translate 200ms var(--ease-saida);} .ds-btn:active{translate:0 1px;} .ds-btn svg{width:1.1rem;height:1.1rem;flex:none;} .ds-btn-linha{background:transparent;color:var(--tinta);box-shadow:inset 0 0 0 2px var(--tinta);} .ds-btn-linha:hover{background:rgb(58 29 15 / 0.08);} .ds-btn:focus-visible{outline:3px solid var(--tinta);outline-offset:3px;}"
+    },
+    {
+      "name": "Botão creme",
+      "kind": "button",
+      "refersTo": "button-creme",
+      "description": "Ação secundária sobre a toalha (ligar para grupos).",
+      "html": "<div style=\"background:#86401e;padding:1rem\"><a class=\"ds-btn ds-btn-creme\" href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z\"/></svg> Ligar para grupos</a></div>",
+      "css": ":root{--toalha:#86401e;--toalha-funda:#6e3418;--toalha-sombra:rgb(42 14 2 / 0.55);--creme:#f0d5ab;--creme-suave:#e8c9a0;--louca:#f7eedd;--aro:#a8622c;--papel:#fbf4e6;--papel-linha:#e3d2b4;--tinta:#3a1d0f;--tinta-suave:#6b4630;--gema:#b6400c;--gema-funda:#96340a;--gema-texto:#fff6e8;--letra-titulo:\"Bubblegum Sans\",\"Trebuchet MS\",sans-serif;--letra-texto:\"Figtree\",system-ui,-apple-system,\"Segoe UI\",sans-serif;--ease-saida:cubic-bezier(0.16,1,0.3,1);} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:0.45rem;min-height:48px;padding:0 1.25rem;border-radius:4px;font:750 1.02rem/1 var(--letra-texto);text-decoration:none;border:0;cursor:pointer;transition:background-color 200ms var(--ease-saida),translate 200ms var(--ease-saida);} .ds-btn:active{translate:0 1px;} .ds-btn svg{width:1.1rem;height:1.1rem;flex:none;} .ds-btn-creme{background:var(--creme);color:var(--toalha-funda);} .ds-btn-creme:hover{background:var(--papel);} .ds-btn:focus-visible{outline:3px solid var(--creme);outline-offset:3px;}"
+    },
+    {
+      "name": "Navegação do cabeçalho",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Três links curtos em creme sobre a toalha; atual e hover sublinhados a cheio.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Início</a><a href=\"#\" aria-current=\"page\">Ementa</a><a href=\"#\">Onde</a></nav>",
+      "css": ":root{--toalha:#86401e;--toalha-funda:#6e3418;--toalha-sombra:rgb(42 14 2 / 0.55);--creme:#f0d5ab;--creme-suave:#e8c9a0;--louca:#f7eedd;--aro:#a8622c;--papel:#fbf4e6;--papel-linha:#e3d2b4;--tinta:#3a1d0f;--tinta-suave:#6b4630;--gema:#b6400c;--gema-funda:#96340a;--gema-texto:#fff6e8;--letra-titulo:\"Bubblegum Sans\",\"Trebuchet MS\",sans-serif;--letra-texto:\"Figtree\",system-ui,-apple-system,\"Segoe UI\",sans-serif;--ease-saida:cubic-bezier(0.16,1,0.3,1);} .ds-nav{display:flex;gap:0.15rem;background:var(--toalha);padding:0.5rem 1rem;} .ds-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 0.6rem;font:650 0.98rem/1 var(--letra-texto);color:var(--creme);text-decoration:none;text-underline-offset:0.2em;} .ds-nav a:hover,.ds-nav a[aria-current=\"page\"]{text-decoration:underline;text-decoration-thickness:2px;} .ds-nav a:focus-visible{outline:3px solid var(--creme);outline-offset:3px;border-radius:4px;}"
+    },
+    {
+      "name": "Índice da ementa",
+      "kind": "chip",
+      "refersTo": "indice-link",
+      "description": "Pílulas de categoria; o grupo em pílula creme cheia com a letra dos títulos.",
+      "html": "<ul class=\"ds-indice\"><li class=\"g\"><a href=\"#\">Comida</a></li><li><a href=\"#\">Tapas</a></li><li><a href=\"#\">Peixe</a></li><li><a href=\"#\">Vegetariano</a></li></ul>",
+      "css": ":root{--toalha:#86401e;--toalha-funda:#6e3418;--toalha-sombra:rgb(42 14 2 / 0.55);--creme:#f0d5ab;--creme-suave:#e8c9a0;--louca:#f7eedd;--aro:#a8622c;--papel:#fbf4e6;--papel-linha:#e3d2b4;--tinta:#3a1d0f;--tinta-suave:#6b4630;--gema:#b6400c;--gema-funda:#96340a;--gema-texto:#fff6e8;--letra-titulo:\"Bubblegum Sans\",\"Trebuchet MS\",sans-serif;--letra-texto:\"Figtree\",system-ui,-apple-system,\"Segoe UI\",sans-serif;--ease-saida:cubic-bezier(0.16,1,0.3,1);} .ds-indice{list-style:none;margin:0;padding:0.55rem 1rem;display:flex;gap:0.4rem;background:var(--toalha-funda);} .ds-indice a{display:inline-flex;align-items:center;min-height:44px;padding:0 0.85rem;border-radius:999px;color:var(--creme);font:650 0.95rem/1 var(--letra-texto);text-decoration:none;box-shadow:inset 0 0 0 1.5px rgb(240 213 171 / 0.45);white-space:nowrap;} .ds-indice a:hover{box-shadow:inset 0 0 0 2px var(--creme);} .ds-indice .g a{font:400 1.2rem/1 var(--letra-titulo);background:var(--creme);color:var(--toalha-funda);box-shadow:none;} .ds-indice a:focus-visible{outline:3px solid var(--creme);outline-offset:3px;}"
+    },
+    {
+      "name": "Prato (só texto)",
+      "kind": "custom",
+      "refersTo": "prato",
+      "description": "Prato redondo de grés com aro; nome, detalhe e preço escritos no fundo.",
+      "html": "<div style=\"background:#86401e;padding:1.5rem\"><div class=\"ds-prato\"><div class=\"ds-miolo\"><p class=\"n\">Fondue de queijo brie</p><p class=\"x\">crocante de pão e frutos do bosque · 5 un.</p><p class=\"p\">7,90 €</p></div></div></div>",
+      "css": ":root{--toalha:#86401e;--toalha-funda:#6e3418;--toalha-sombra:rgb(42 14 2 / 0.55);--creme:#f0d5ab;--creme-suave:#e8c9a0;--louca:#f7eedd;--aro:#a8622c;--papel:#fbf4e6;--papel-linha:#e3d2b4;--tinta:#3a1d0f;--tinta-suave:#6b4630;--gema:#b6400c;--gema-funda:#96340a;--gema-texto:#fff6e8;--letra-titulo:\"Bubblegum Sans\",\"Trebuchet MS\",sans-serif;--letra-texto:\"Figtree\",system-ui,-apple-system,\"Segoe UI\",sans-serif;--ease-saida:cubic-bezier(0.16,1,0.3,1);} .ds-prato{--aro-w:0.8rem;width:15rem;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;text-align:center;color:var(--tinta);background-color:var(--louca);background-image:radial-gradient(circle at 20% 30%,rgb(91 58 34 / .5) 0 1px,transparent 1.5px),radial-gradient(circle at 70% 60%,rgb(138 90 52 / .4) 0 1px,transparent 1.5px);background-size:37px 41px,53px 47px;box-shadow:inset 0 0 0 var(--aro-w) var(--aro),inset 0 0 0 calc(var(--aro-w) + 2px) rgb(90 40 10 / 0.25),0 1.4rem 2.2rem -0.9rem rgb(42 14 2 / 0.55),0 0.3rem 0.6rem -0.2rem rgb(42 14 2 / 0.35);} .ds-miolo{width:70%;display:grid;gap:0.35rem;justify-items:center;} .ds-miolo p{margin:0;} .ds-miolo .n{font:400 1.4rem/1.02 var(--letra-titulo);} .ds-miolo .x{font:400 0.85rem/1.3 var(--letra-texto);color:var(--tinta-suave);} .ds-miolo .p{font:750 1rem/1 var(--letra-texto);font-variant-numeric:tabular-nums lining-nums;}"
+    },
+    {
+      "name": "Travessa",
+      "kind": "card",
+      "refersTo": "travessa",
+      "description": "Grés de cantos arredondados para lugares e pessoas, levemente inclinada.",
+      "html": "<div style=\"background:#86401e;padding:1.5rem\"><figure class=\"ds-travessa\"><div class=\"ds-foto\"></div></figure></div>",
+      "css": ":root{--toalha:#86401e;--toalha-funda:#6e3418;--toalha-sombra:rgb(42 14 2 / 0.55);--creme:#f0d5ab;--creme-suave:#e8c9a0;--louca:#f7eedd;--aro:#a8622c;--papel:#fbf4e6;--papel-linha:#e3d2b4;--tinta:#3a1d0f;--tinta-suave:#6b4630;--gema:#b6400c;--gema-funda:#96340a;--gema-texto:#fff6e8;--letra-titulo:\"Bubblegum Sans\",\"Trebuchet MS\",sans-serif;--letra-texto:\"Figtree\",system-ui,-apple-system,\"Segoe UI\",sans-serif;--ease-saida:cubic-bezier(0.16,1,0.3,1);} .ds-travessa{--aro-w:0.55rem;margin:0;width:18rem;padding:1.1rem;border-radius:clamp(1.2rem,4vw,2.2rem);rotate:-1.2deg;background-color:var(--louca);background-image:radial-gradient(circle at 20% 30%,rgb(91 58 34 / .5) 0 1px,transparent 1.5px),radial-gradient(circle at 70% 60%,rgb(138 90 52 / .4) 0 1px,transparent 1.5px);background-size:37px 41px,53px 47px;box-shadow:inset 0 0 0 var(--aro-w) var(--aro),inset 0 0 0 calc(var(--aro-w) + 2px) rgb(90 40 10 / 0.25),0 1.4rem 2.2rem -0.9rem rgb(42 14 2 / 0.55),0 0.3rem 0.6rem -0.2rem rgb(42 14 2 / 0.35);} .ds-foto{aspect-ratio:4/3;border-radius:clamp(0.7rem,2.4vw,1.4rem);background:linear-gradient(135deg,#7a5232,#c79a63);box-shadow:inset 0 0 0 1px rgb(0 0 0 / 0.1);}"
+    },
+    {
+      "name": "Papel com linhas da ementa",
+      "kind": "card",
+      "refersTo": "papel",
+      "description": "Folha creme pousada na toalha; linhas da ementa com preço alinhado e marca por confirmar.",
+      "html": "<div style=\"background:#86401e;padding:1.5rem\"><div class=\"ds-papel\"><h3>Tapas <span>42</span></h3><ul><li><span>Ovos rotos com presunto</span><b>9,90 €</b></li><li><span>Ameijoa à bulhão pato</span><b>9,90 €</b></li></ul><p class=\"ds-pc\">Preços em euros, IVA incluído.<span style=\"position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)\"> (por confirmar)</span></p></div></div>",
+      "css": ":root{--toalha:#86401e;--toalha-funda:#6e3418;--toalha-sombra:rgb(42 14 2 / 0.55);--creme:#f0d5ab;--creme-suave:#e8c9a0;--louca:#f7eedd;--aro:#a8622c;--papel:#fbf4e6;--papel-linha:#e3d2b4;--tinta:#3a1d0f;--tinta-suave:#6b4630;--gema:#b6400c;--gema-funda:#96340a;--gema-texto:#fff6e8;--letra-titulo:\"Bubblegum Sans\",\"Trebuchet MS\",sans-serif;--letra-texto:\"Figtree\",system-ui,-apple-system,\"Segoe UI\",sans-serif;--ease-saida:cubic-bezier(0.16,1,0.3,1);} .ds-papel{background:var(--papel);color:var(--tinta);border-radius:3px;padding:1.75rem;max-width:30rem;box-shadow:0 1.4rem 2.4rem -1.2rem rgb(42 14 2 / 0.55),0 0.2rem 0.5rem rgb(42 14 2 / 0.25);font:400 1.02rem/1.35 var(--letra-texto);} .ds-papel h3{margin:0;font:400 2rem/0.98 var(--letra-titulo);display:flex;gap:0.6rem;align-items:baseline;} .ds-papel h3 span{font:600 0.85rem/1 var(--letra-texto);color:var(--tinta-suave);} .ds-papel ul{list-style:none;margin:0.75rem 0 0;padding:0;} .ds-papel li{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:1rem;align-items:baseline;padding:0.7rem 0;border-bottom:1px solid var(--papel-linha);} .ds-papel b{font-weight:750;font-variant-numeric:tabular-nums lining-nums;white-space:nowrap;} .ds-pc{margin:1rem 0 0;font-size:0.92rem;color:var(--tinta-suave);text-decoration:underline dashed;text-decoration-thickness:1.5px;text-underline-offset:0.28em;}"
+    },
+    {
+      "name": "Talão de reserva",
+      "kind": "custom",
+      "refersTo": "talao",
+      "description": "Bilhete de papel picotado no topo, sempre presente: título, horário de hoje por confirmar, gema + linha.",
+      "html": "<div style=\"background:#86401e;padding:1.5rem 0 0\"><div class=\"ds-talao\"><div class=\"t\"><span class=\"ti\">Reservar mesa</span><span class=\"h\"><span class=\"pc\">Hoje, sexta: 18:00–00:00</span></span></div><div class=\"a\"><a class=\"ds-btn ds-btn-gema\" href=\"#\">Reservar no TheFork</a><a class=\"ds-btn ds-btn-linha\" href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z\"/></svg> Ligar</a></div></div></div>",
+      "css": ":root{--toalha:#86401e;--toalha-funda:#6e3418;--toalha-sombra:rgb(42 14 2 / 0.55);--creme:#f0d5ab;--creme-suave:#e8c9a0;--louca:#f7eedd;--aro:#a8622c;--papel:#fbf4e6;--papel-linha:#e3d2b4;--tinta:#3a1d0f;--tinta-suave:#6b4630;--gema:#b6400c;--gema-funda:#96340a;--gema-texto:#fff6e8;--letra-titulo:\"Bubblegum Sans\",\"Trebuchet MS\",sans-serif;--letra-texto:\"Figtree\",system-ui,-apple-system,\"Segoe UI\",sans-serif;--ease-saida:cubic-bezier(0.16,1,0.3,1);} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:0.45rem;min-height:48px;padding:0 1.25rem;border-radius:4px;font:750 1.02rem/1 var(--letra-texto);text-decoration:none;border:0;cursor:pointer;transition:background-color 200ms var(--ease-saida),translate 200ms var(--ease-saida);} .ds-btn:active{translate:0 1px;} .ds-btn svg{width:1.1rem;height:1.1rem;flex:none;} .ds-btn-gema{background:var(--gema);color:var(--gema-texto);} .ds-btn-gema:hover{background:var(--gema-funda);} .ds-btn-linha{background:transparent;color:var(--tinta);box-shadow:inset 0 0 0 2px var(--tinta);} .ds-btn-linha:hover{background:rgb(58 29 15 / 0.08);} .ds-btn:focus-visible{outline:3px solid var(--tinta);outline-offset:3px;} .ds-talao{background:var(--papel);color:var(--tinta);padding:0.85rem 1.25rem;display:grid;gap:0.6rem;box-shadow:0 -0.6rem 1.6rem -0.4rem rgb(42 14 2 / 0.45);-webkit-mask:radial-gradient(circle at 50% 0,transparent 0.32rem,#000 0.34rem) top/0.9rem 100% repeat-x;mask:radial-gradient(circle at 50% 0,transparent 0.32rem,#000 0.34rem) top/0.9rem 100% repeat-x;font-family:var(--letra-texto);} .ds-talao .t{display:flex;justify-content:space-between;align-items:baseline;gap:0.75rem;} .ds-talao .ti{font:400 1.4rem/1 var(--letra-titulo);white-space:nowrap;} .ds-talao .h{font-size:0.88rem;color:var(--tinta-suave);} .ds-talao .pc{text-decoration:underline dashed;text-decoration-thickness:1.5px;text-underline-offset:0.28em;} .ds-talao .a{display:grid;grid-template-columns:1.5fr 1fr;gap:0.6rem;} .ds-talao .a .ds-btn{padding:0 0.75rem;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A mesa ao centro",
+    "overview": "O site é a mesa do grupo vista de cima. A página inteira é a toalha castanha do logótipo, com uma trama de fio muito leve, e tudo o que se mostra está pousado nela: a comida vem em pratos redondos de grés creme pintalgado com aro castanho, os lugares e as pessoas vêm em travessas de cantos arredondados, e a informação prática (horário, morada, a ementa inteira) vem em papel creme. Nada é um cartão de interface; cada superfície é um objeto da mesa.\n\nA composição é solta e sobreposta, como louça posta para partilhar: pratos que saem pela borda do ecrã, pratos que se tocam, ligeiras inclinações. A densidade é baixa na página inicial e alta na ementa, onde o papel aguenta 255 linhas com preços alinhados. A letra dos títulos é a do logótipo, redonda e informal; o texto corrido é uma sans de trabalho, firme e legível. Há uma só cor viva, o laranja-gema, e pertence à reserva.\n\nA verdade dos dados faz parte da linguagem visual: o que está confirmado escreve-se a traço cheio, o que está por confirmar sublinha-se a tracejado e diz-se aos leitores de ecrã. Fotografias reais da casa, sem clientes identificáveis em destaque.",
+    "keyCharacteristics": [
+      "Chão único castanho (toalha), sem secções brancas nem faixas de cor a toda a largura.",
+      "Três materiais pousados: grés (pratos e travessas), papel (informação e ementa), talão perfurado (reserva).",
+      "Fotografias sempre dentro de louça: no poço redondo de um prato ou no fundo de uma travessa.",
+      "Uma cor viva, só para reservar.",
+      "Um único gesto de movimento: os pratos deslizam para o centro da mesa.",
+      "Por confirmar = sublinhado tracejado + texto só para leitores de ecrã; nunca cor."
+    ],
+    "rules": [
+      {
+        "name": "The Gema Rule",
+        "body": "O laranja-gema só aparece no botão de reserva online. Nenhum título, ícone, sublinhado, foco ou destaque o usa. Se a gema aparece fora do talão, é um erro.",
+        "section": "colors"
+      },
+      {
+        "name": "The Toalha Rule",
+        "body": "O fundo da página é sempre a toalha. Superfícies claras existem só como objetos pousados (louça, papel, talão), com sombra própria, nunca como faixas de secção.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tracejado Rule",
+        "body": "Texto por confirmar leva sublinhado tracejado (1.5px, offset 0.28em, na cor do próprio texto) e um sufixo só para leitores de ecrã \"(por confirmar)\". Confirmado leva traço cheio ou nenhum. A cor nunca carrega este significado.",
+        "section": "colors"
+      },
+      {
+        "name": "The Duas Vozes Rule",
+        "body": "Bubblegum Sans só em títulos e nomes de pratos, sempre a peso 400; tudo o resto, incluindo botões, preços e navegação, é Figtree. Os grupos do índice da ementa são a única etiqueta em Bubblegum.",
+        "section": "typography"
+      },
+      {
+        "name": "The Preço Firme Rule",
+        "body": "Os preços são sempre Figtree 750 com algarismos tabulares, nunca quebram, e alinham à direita nas linhas da ementa.",
+        "section": "typography"
+      },
+      {
+        "name": "The Pousado Rule",
+        "body": "Só objetos pousados têm sombra, e a sombra cai sempre para baixo em castanho translúcido. Texto e botões não têm sombra.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do pousar cada fotografia em louça: poço redondo de prato para comida, travessa para lugares e pessoas.",
+      "Do manter a toalha (#86401e) como fundo único de todas as páginas, com a trama leve por cima.",
+      "Do marcar tudo o que está por confirmar com sublinhado tracejado e o sufixo \"(por confirmar)\" só para leitores de ecrã.",
+      "Do escrever preços em Figtree 750 com algarismos tabulares, sem quebra.",
+      "Do dar a cada link e botão pelo menos 44px de altura e um anel de foco de 3px em creme ou tinta, conforme o chão.",
+      "Do inclinar levemente os objetos pousados (0.6°–8°) e deixá-los sobrepor-se na mesa.",
+      "Do desligar o deslize dos pratos e o scroll suave com prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't usar o laranja-gema fora do botão de reserva online.",
+      "Don't usar cor para indicar \"por confirmar\"; nem sublinhado tracejado em texto confirmado.",
+      "Don't abrir secções brancas ou faixas de cor a toda a largura; o claro só existe como objeto pousado.",
+      "Don't pôr uma fotografia a toda a largura com um botão por cima, nem alinhar pratos numa grelha de cartões iguais.",
+      "Don't usar Bubblegum Sans em texto corrido, botões ou preços, nem em pesos falsos.",
+      "Don't usar sombras pretas, duras ou deslocadas na diagonal.",
+      "Don't pôr em destaque fotografias com clientes identificáveis.",
+      "Don't acrescentar outro gesto de movimento além do deslize dos pratos."
+    ]
+  }
+}
