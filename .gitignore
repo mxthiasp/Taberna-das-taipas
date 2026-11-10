@@ -21,3 +21,6 @@ conteudo/
 Thumbs.db
 desktop.ini
 node_modules/
+
+# Cópias locais de versões antigas, para comparar no browser (a tag git guarda cada versão)
+versoes/

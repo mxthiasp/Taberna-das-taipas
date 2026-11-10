@@ -181,6 +181,7 @@ function pagina(dados) {
   <title>Ementa · Taberna das Taipas</title>
   <meta name="description" content="Ementa completa da Taberna das Taipas, com preços: tapas, peixe, carne, snacks, sobremesas, cervejas, vinhos e sangrias.">
   <meta name="theme-color" content="#86401e">
+  <meta name="format-detection" content="telephone=no">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/bubblegum-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
