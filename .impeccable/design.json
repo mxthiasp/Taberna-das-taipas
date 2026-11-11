@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-11T15:30:37.143Z",
+  "generatedAt": "2026-11-11T16:11:42.994Z",
   "title": "Design System: Taberna das Taipas",
   "extensions": {
     "colorMeta": {
@@ -122,6 +122,21 @@
           "#d3c3ac",
           "#e5ddd2",
           "#f5f3ef"
+        ]
+      },
+      "linha-forte": {
+        "role": "neutral",
+        "displayName": "Risco Firme",
+        "canonical": "#957d6a",
+        "tonalRamp": [
+          "#2b2622",
+          "#483f37",
+          "#66584c",
+          "#8f7866",
+          "#ad9c90",
+          "#c8beb7",
+          "#dfdbd7",
+          "#f4f2f1"
         ]
       },
       "tinta": {

@@ -34,6 +34,7 @@
   --branco: #ffffff;
   --painel: #f5e6cf;
   --linha: #e6d9c6;
+  --linha-forte: #957d6a;  /* contorno de campos: 3:1 sobre branco, fundo e painel (WCAG 1.4.11) */
   --tinta: #2b1a10;
   --tinta-suave: #6b4f3c;
   --marca: #86401e;        /* castanho do logótipo */
@@ -223,7 +224,8 @@ p { margin: 0; text-wrap: pretty; }
   left: 0; right: 0;
   pointer-events: none;
 }
-.abertura::before { top: 0; height: 9rem; background: linear-gradient(rgb(20 9 3 / 0.6), rgb(20 9 3 / 0)); }
+/* o véu de cima garante 4,5:1 ao menu branco mesmo sobre as zonas claras da fotografia */
+.abertura::before { top: 0; height: 11rem; background: linear-gradient(rgb(20 9 3 / 0.72), rgb(20 9 3 / 0.45) 55%, rgb(20 9 3 / 0)); }
 .abertura::after { bottom: 0; height: 75%; background: linear-gradient(rgb(20 9 3 / 0), rgb(20 9 3 / 0.55) 40%, rgb(20 9 3 / 0.82)); }
 @media (prefers-reduced-motion: no-preference) {
   .abertura__foto { animation: assenta 1400ms var(--ease-saida) both; }
@@ -817,7 +819,7 @@ p { margin: 0; text-wrap: pretty; }
   width: 100%;
   min-height: 48px;
   padding: 0 0.9rem 0 2.6rem;
-  border: 1px solid var(--linha);
+  border: 1px solid var(--linha-forte);
   border-radius: var(--raio);
   background: var(--branco);
   color: var(--tinta);
@@ -867,6 +869,8 @@ p { margin: 0; text-wrap: pretty; }
 }
 .js .ao-topo .ao-topo__texto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .js .ao-topo.visivel { opacity: 1; translate: 0 0; pointer-events: auto; }
+/* com o teclado, o botão aparece sempre que recebe o foco, mesmo antes de descer */
+.js .ao-topo:focus-visible { opacity: 1; translate: 0 0; pointer-events: auto; }
 .js .ao-topo:active { background: var(--painel); }
 @media (hover: hover) and (pointer: fine) {
   .js .ao-topo:hover { background: var(--painel); }

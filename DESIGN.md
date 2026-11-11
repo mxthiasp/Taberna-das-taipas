@@ -10,6 +10,7 @@ colors:
   branco: "#ffffff"
   painel: "#f5e6cf"
   linha: "#e6d9c6"
+  linha-forte: "#957d6a"
   tinta: "#2b1a10"
   tinta-suave: "#6b4f3c"
   rodape: "#2b140a"
@@ -140,6 +141,7 @@ Uma paleta de linho e castanho, toda tirada do logótipo, com um único acento.
 - **Branco de Toalha** (branco): o talão de reserva e as pílulas do índice; é o que fica por cima do fundo.
 - **Pão Torrado** (painel): painéis de informação (onde e quando, avisos da ementa), prato marcado na ementa, moldura das fotos enquanto carregam.
 - **Risco de Giz** (linha): separadores de linhas da ementa, bordas do talão e do índice, trilho da barra dos pratos.
+- **Risco Firme** (linha-forte): contorno de campos de texto (a pesquisa da ementa). Dá pelo menos 3:1 sobre o branco, o fundo e o painel, para o campo se ver como campo (WCAG 1.4.11).
 - **Tinta de Castanha** (tinta): todo o texto e os contornos do botão de linha.
 - **Tinta Diluída** (tinta-suave): introduções, notas, metadados dos pratos, contagens.
 - **Lareira** (rodape): rodapé, faixa de grupos e fundo enquanto a fotografia de abertura carrega.
