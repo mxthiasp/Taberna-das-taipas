@@ -4,6 +4,11 @@
 //   {{SITE_URL}}     endereço público do site, sem barra no fim (meta tags de partilha)
 //   {{URL_EMENTA}}   endereço da ementa, para mostrar por extenso por baixo do QR
 //   {{QR_EMENTA}}    código QR em SVG que abre a ementa (qr-mesa.html)
+//   {{ESTATISTICAS}} script do Cloudflare Web Analytics, ou nada enquanto estiver desligado
+//
+// Blocos condicionais (na política de privacidade):
+//   <!-- com-estatisticas --> … <!-- /com-estatisticas -->   ficam só com as estatísticas ligadas
+//   <!-- sem-estatisticas --> … <!-- /sem-estatisticas -->   ficam só com as estatísticas desligadas
 //
 // Endereço público: quando o domínio .pt existir, muda SITE_URL_PADRAO, ou usa sem mexer no ficheiro:
 //   SITE_URL=https://www.exemplo.pt node scripts/build.mjs                    (bash)
@@ -47,11 +52,40 @@ export function qrSvg(texto, titulo) {
     `<rect width="${lado}" height="${lado}" fill="#fff"/><path fill="#000" d="${d}"/></svg>`;
 }
 
+// ——— Estatísticas: Cloudflare Web Analytics (sem cookies) ———
+// DESLIGADO até haver domínio próprio. Para ligar:
+//   1. No painel da Cloudflare: Analytics & Logs → Web Analytics → Add a site → o domínio .pt.
+//      Copiar o token que aparece no código JS (data-cf-beacon='{"token": "…"}').
+//   2. Pôr o token em ESTATISTICAS_TOKEN_PADRAO, aqui em baixo (é público: vai no HTML de todas as páginas).
+//   3. Mudar SITE_URL_PADRAO para o domínio, construir e publicar.
+// Só liga com token E domínio próprio: com um endereço *.pages.dev fica desligado, mesmo com token.
+// A política de privacidade troca sozinha para a versão que menciona as estatísticas.
+const ESTATISTICAS_TOKEN_PADRAO = '';   // ← o token do Cloudflare Web Analytics, quando houver domínio
+const ESTATISTICAS_TOKEN = (process.env.ESTATISTICAS_TOKEN ?? ESTATISTICAS_TOKEN_PADRAO).trim();
+export const ESTATISTICAS = Boolean(ESTATISTICAS_TOKEN) && !/\.pages\.dev$/.test(SITE_URL);
+if (ESTATISTICAS_TOKEN && !ESTATISTICAS) {
+  console.warn('Estatísticas: há token, mas o site ainda está num endereço *.pages.dev. Ficam desligadas até haver domínio.');
+}
+if (ESTATISTICAS_TOKEN && !/^[0-9a-f]{32}$/i.test(ESTATISTICAS_TOKEN)) {
+  console.error('ESTATISTICAS_TOKEN inválido: o token do Cloudflare Web Analytics tem 32 caracteres hexadecimais.');
+  process.exit(1);
+}
+const SCRIPT_ESTATISTICAS = ESTATISTICAS
+  ? `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "${ESTATISTICAS_TOKEN}"}'></script>`
+  : '';
+
+const BLOCO_COM = /[ \t]*<!-- com-estatisticas -->[\s\S]*?<!-- \/com-estatisticas -->\r?\n?/g;
+const BLOCO_SEM = /[ \t]*<!-- sem-estatisticas -->[\s\S]*?<!-- \/sem-estatisticas -->\r?\n?/g;
+
 let qrEmenta;
 
 // Troca os marcadores numa página. Lança um erro se ficar algum {{…}} por trocar.
 export function substituir(html) {
-  let out = html.replaceAll('{{SITE_URL}}', SITE_URL).replaceAll('{{URL_EMENTA}}', URL_EMENTA);
+  let out = html.replaceAll('{{SITE_URL}}', SITE_URL).replaceAll('{{URL_EMENTA}}', URL_EMENTA)
+    .replaceAll('{{ESTATISTICAS}}', SCRIPT_ESTATISTICAS)
+    // blocos condicionais: fica um, o outro sai inteiro
+    .replace(ESTATISTICAS ? BLOCO_SEM : BLOCO_COM, '')
+    .replace(/<!-- \/?(com|sem)-estatisticas -->/g, '');
   if (out.includes('{{QR_EMENTA}}')) {
     qrEmenta ??= qrSvg(URL_EMENTA, 'Código QR que abre a ementa: ' + URL_EMENTA);
     out = out.replaceAll('{{QR_EMENTA}}', qrEmenta);

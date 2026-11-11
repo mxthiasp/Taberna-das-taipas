@@ -35,11 +35,13 @@
        sem estatísticas, fontes e imagens servidas pelo próprio site, alojamento no Cloudflare Pages).
        Antes de publicar como site oficial: preencher [NOME DA EMPRESA], [NIF] e [MORADA FISCAL],
        confirmar os pontos marcados a tracejado e pedir a revisão de quem trata da conformidade legal
-       do restaurante. Se o site passar a ter formulários, estatísticas ou cookies, este texto tem de mudar. -->
+       do restaurante. As estatísticas (Cloudflare Web Analytics) têm o texto pronto nos blocos com-estatisticas / sem-estatisticas:
+       o build escolhe a versão certa conforme estejam ligadas (scripts/paginas.mjs).
+       Se o site passar a ter formulários ou cookies, este texto tem de mudar. -->
   <main id="conteudo" class="texto-legal">
     <h1>Política de privacidade</h1>
     <p class="texto-legal__data">Última atualização: 11 de novembro de 2026</p>
-    <p class="texto-legal__resumo">Em resumo: este site não tem formulários, não usa cookies e não regista estatísticas de visitas. Os dados pessoais que a Taberna das Taipas trata são os que nos dá para reservar mesa.</p>
+    <p class="texto-legal__resumo">Em resumo: este site não tem formulários e não usa cookies.<!-- sem-estatisticas --> Também não regista estatísticas de visitas.<!-- /sem-estatisticas --><!-- com-estatisticas --> Conta as visitas de forma anónima, sem cookies.<!-- /com-estatisticas --> Os dados pessoais que a Taberna das Taipas trata são os que nos dá para reservar mesa.</p>
 
     <section aria-labelledby="p-responsavel">
       <h2 id="p-responsavel">Quem é o responsável</h2>
@@ -52,8 +54,14 @@
       <ul class="texto-legal__lista">
         <li><strong>Nenhum formulário.</strong> O site não lhe pede nome, email nem telefone.</li>
         <li><strong>Nenhum cookie.</strong> Não usamos cookies, nem nossos nem de terceiros, e não guardamos nada no seu browser.</li>
+        <!-- sem-estatisticas -->
         <li><strong>Nenhuma estatística ou publicidade.</strong> Não usamos ferramentas de análise de visitas, píxeis de redes sociais nem publicidade.</li>
         <li><strong>Nada carregado de terceiros.</strong> As letras, as imagens e o código vêm do próprio site; abrir uma página não envia dados a outras empresas.</li>
+        <!-- /sem-estatisticas -->
+        <!-- com-estatisticas -->
+        <li><strong>Só estatísticas anónimas, sem cookies.</strong> Contamos as visitas com o Cloudflare Web Analytics (ver abaixo). Não usamos píxeis de redes sociais nem publicidade.</li>
+        <li><strong>Um único serviço externo.</strong> As letras, as imagens e o código vêm do próprio site; a única exceção é o pequeno script de estatísticas da Cloudflare.</li>
+        <!-- /com-estatisticas -->
       </ul>
       <p>O horário “aberto agora” do talão de reserva é calculado no seu próprio browser, com a hora do aparelho, e não sai dele.</p>
     </section>
@@ -62,6 +70,14 @@
       <h2 id="p-alojamento">Alojamento do site</h2>
       <p>O site está alojado no Cloudflare Pages, da Cloudflare, Inc. Como qualquer servidor, para lhe entregar as páginas e proteger o site contra abusos, a Cloudflare recebe os dados técnicos de cada pedido: endereço IP, browser e sistema, página pedida e hora. A Cloudflare trata estes dados por nossa conta, como subcontratante, e pode tratá-los fora da União Europeia com as garantias previstas no Regulamento Geral sobre a Proteção de Dados (RGPD). Não usamos estes dados para o identificar.</p>
     </section>
+
+    <!-- com-estatisticas -->
+    <section aria-labelledby="p-estatisticas">
+      <h2 id="p-estatisticas">Estatísticas de visitas</h2>
+      <p>Para sabermos quantas pessoas visitam o site e que páginas leem, usamos o Cloudflare Web Analytics, da Cloudflare, Inc. Não usa cookies, não guarda nada no seu browser e, segundo a Cloudflare, não segue as pessoas de site em site nem guarda o endereço IP para as identificar. Recebe, de cada visita, a página vista, a página de onde veio, o browser e o tipo de aparelho, o país (deduzido do endereço IP) e o tempo que a página demorou a carregar. Vemos apenas totais, nunca visitas individuais.</p>
+      <p>Usamos estas estatísticas ao abrigo do nosso interesse legítimo em perceber se o site é útil e rápido (artigo 6.º, n.º 1, alínea f) do RGPD). A Cloudflare trata estes dados por nossa conta, como subcontratante, com as garantias previstas no RGPD. Pode bloquear a recolha com um bloqueador de conteúdos, sem perder nada no site.</p>
+    </section>
+    <!-- /com-estatisticas -->
 
     <section aria-labelledby="p-reservas">
       <h2 id="p-reservas">Reservas</h2>
@@ -145,5 +161,7 @@
   </aside>
 
   <script src="assets/js/hoje.js" defer></script>
+  <!-- Estatísticas (Cloudflare Web Analytics, sem cookies): vazio enquanto estiverem desligadas; ver scripts/paginas.mjs -->
+  {{ESTATISTICAS}}
 </body>
 </html>
