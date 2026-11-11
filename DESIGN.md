@@ -116,7 +116,7 @@ O site abre a porta da casa. A primeira coisa que se vê é uma fotografia real,
 
 A densidade é calma e o ritmo é vertical: secções largas com respiração generosa, uma única faixa escura a meio (o convite aos grupos) e o rodapé no mesmo castanho profundo. O castanho do logótipo é raro de propósito. Aparece no que se carrega (reservar, ligar, ligações) e no que é "da casa"; nunca como fundo de secção.
 
-Tudo o que não está confirmado com o restaurante leva o sublinhado tracejado, nunca uma cor. A faixa "Protótipo · não é o site oficial" no topo é temporária: sai antes de o site ir para o ar e não faz parte da marca.
+Tudo o que não está confirmado com o restaurante leva o sublinhado tracejado, nunca uma cor. Enquanto o site for protótipo, a legenda disso vive no rodapé ("Protótipo. O que está sublinhado a tracejado ainda está por confirmar com o restaurante."), não numa faixa no topo.
 
 **Key Characteristics:**
 - Fotografia real da casa como abertura, a toda a largura, com véus escuros só onde há texto.
@@ -142,7 +142,7 @@ Uma paleta de linho e castanho, toda tirada do logótipo, com um único acento.
 - **Risco de Giz** (linha): separadores de linhas da ementa, bordas do talão e do índice, trilho da barra dos pratos.
 - **Tinta de Castanha** (tinta): todo o texto e os contornos do botão de linha.
 - **Tinta Diluída** (tinta-suave): introduções, notas, metadados dos pratos, contagens.
-- **Lareira** (rodape): rodapé, faixa de grupos, faixa do protótipo e fundo enquanto a fotografia de abertura carrega.
+- **Lareira** (rodape): rodapé, faixa de grupos e fundo enquanto a fotografia de abertura carrega.
 - **Brasa Clara** (rodape-texto): texto corrido sobre a Lareira.
 - **Texto sobre Foto** (sobre-foto) e **Sobre o Castanho** (sobre-marca): texto secundário sobre a fotografia de abertura, e texto dos botões castanhos e dos títulos sobre fundo escuro.
 
@@ -227,8 +227,8 @@ Botão redondo branco de 48px com seta, sombra Pousado, no canto inferior direit
 ### Linha da ementa
 Nome à esquerda e preço firme à direita, alinhados pela linha de base, separados por um fio de 1px. Os metadados vão por baixo, em Tinta Diluída. Os pratos da casa levam nome a 650 e a marca circular castanha. O prato aberto a partir da página inicial acende em Pão Torrado.
 
-### Faixa do protótipo (temporária)
-Uma linha de 0.8rem em Brasa Clara sobre a Lareira, com a legenda do tracejado. Não é parte da marca: sai antes de o site ir para o ar. Remove-se apagando o bloco marcado no CSS e a linha nas duas páginas.
+### Nota de protótipo no rodapé
+A legenda do tracejado fica no rodapé, em Brasa Clara sobre a Lareira, na última linha antes do ©. Não há faixa no topo: o cabeçalho encosta ao topo e respeita a safe area do iPhone. Sai quando o site for oficial, junto com o `noindex` das páginas e o `X-Robots-Tag` de `_headers`.
 
 ## Do's and Don'ts
 

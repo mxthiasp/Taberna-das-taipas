@@ -40,22 +40,21 @@ related_targets: ["ementa.html"]
   - Com `prefers-reduced-motion`, nada se mexe.
 - **Fora de questão:** ementa em PDF, pop-ups, música automática e fotos de banco.
 - **Língua:** só português (PT-PT), com espaço para inglês depois.
-- **A faixa "Protótipo · não é o site oficial"** é temporária. Sai antes de o site ir para o ar: apagar o bloco marcado no CSS e a linha `<p class="prototipo">` nas duas páginas.
-- **Indexação:** as páginas levam `noindex, nofollow` enquanto forem protótipo.
+- **Sem faixa de protótipo no topo** (retirada). A nota "Protótipo. O que está sublinhado a tracejado ainda está por confirmar com o restaurante." fica no rodapé da inicial e da ementa.
+- **Indexação:** enquanto forem protótipo, as páginas levam `<meta name="robots" content="noindex, nofollow">` e o `_headers` envia `X-Robots-Tag: noindex, nofollow` para todo o site.
 
 ## Direction contract
 
 THESIS: "A Casa Aberta": o site abre a porta da casa com uma fotografia real dos pratos e deixa o resto claro e arrumado, para a ementa, os preços e a reserva se lerem sem esforço. A personalidade vem das fotografias, da serifa redonda e do castanho do logótipo usado com parcimónia. A decoração não carrega a personalidade.
 
 OWN-WORLD: Sistema em DESIGN.md (v2, commit d22b4e5).
-- **Cores:** fundo Linho Quente (#fbf7f1), texto Tinta de Castanha (#2b1a10), painéis Pão Torrado (#f5e6cf), fios Risco de Giz (#e6d9c6). Um único acento, o Castanho do Logótipo (#86401e), só para ações, ligações e marcas "da casa". A Lareira (#2b140a) é usada só no rodapé, na faixa dos grupos e na faixa do protótipo.
+- **Cores:** fundo Linho Quente (#fbf7f1), texto Tinta de Castanha (#2b1a10), painéis Pão Torrado (#f5e6cf), fios Risco de Giz (#e6d9c6). Um único acento, o Castanho do Logótipo (#86401e), só para ações, ligações e marcas "da casa". A Lareira (#2b140a) é usada só no rodapé e na faixa dos grupos.
 - **Letras:** Young Serif 400 para títulos e para a frase da casa; Figtree para tudo o resto.
 - **Movimento:** uma só curva de saída exponencial.
 
 STORY: O visitante vê a francesinha e o nome da casa e percebe que é uma taberna de petiscos para partilhar nas Taipas. A seguir vê os pratos da casa com foto e preço e as linhas "também da casa", e acredita que serve o grupo dele na faixa "Mesa para o grupo todo". Confirma onde e quando, e reserva pelo talão (TheFork) ou liga.
 
 FIRST VIEWPORT: Telemóvel com 390×844.
-- **Faixa do protótipo** no topo.
 - **Fotografia da francesinha** a toda a largura, com véus escuros só no topo e na base.
 - **Cabeçalho branco** por cima da foto: logótipo circular à esquerda; Ementa, Grupos e Onde à direita.
 - **Em baixo, sobre a foto:**

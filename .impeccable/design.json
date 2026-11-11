@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-11T15:17:40.282Z",
+  "generatedAt": "2026-11-11T15:30:37.143Z",
   "title": "Design System: Taberna das Taipas",
   "extensions": {
     "colorMeta": {
@@ -343,7 +343,7 @@
   ],
   "narrative": {
     "northStar": "A Casa Aberta",
-    "overview": "O site abre a porta da casa. A primeira coisa que se vê é uma fotografia real, a toda a largura, e o resto da página é claro e arrumado como uma mesa posta: fundo de linho quente, texto castanho-escuro e serifa redonda para a voz da casa. Quem decide e reserva é o visitante; o desenho não se põe à frente das fotografias, da ementa nem dos preços.\n\nA densidade é calma e o ritmo é vertical: secções largas com respiração generosa, uma única faixa escura a meio (o convite aos grupos) e o rodapé no mesmo castanho profundo. O castanho do logótipo é raro de propósito. Aparece no que se carrega (reservar, ligar, ligações) e no que é \"da casa\"; nunca como fundo de secção.\n\nTudo o que não está confirmado com o restaurante leva o sublinhado tracejado, nunca uma cor. A faixa \"Protótipo · não é o site oficial\" no topo é temporária: sai antes de o site ir para o ar e não faz parte da marca.",
+    "overview": "O site abre a porta da casa. A primeira coisa que se vê é uma fotografia real, a toda a largura, e o resto da página é claro e arrumado como uma mesa posta: fundo de linho quente, texto castanho-escuro e serifa redonda para a voz da casa. Quem decide e reserva é o visitante; o desenho não se põe à frente das fotografias, da ementa nem dos preços.\n\nA densidade é calma e o ritmo é vertical: secções largas com respiração generosa, uma única faixa escura a meio (o convite aos grupos) e o rodapé no mesmo castanho profundo. O castanho do logótipo é raro de propósito. Aparece no que se carrega (reservar, ligar, ligações) e no que é \"da casa\"; nunca como fundo de secção.\n\nTudo o que não está confirmado com o restaurante leva o sublinhado tracejado, nunca uma cor. Enquanto o site for protótipo, a legenda disso vive no rodapé (\"Protótipo. O que está sublinhado a tracejado ainda está por confirmar com o restaurante.\"), não numa faixa no topo.",
     "keyCharacteristics": [
       "Fotografia real da casa como abertura, a toda a largura, com véus escuros só onde há texto.",
       "Página clara (linho quente) com uma faixa escura a meio e o rodapé escuro.",

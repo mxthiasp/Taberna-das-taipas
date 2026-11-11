@@ -1,0 +1,6 @@
+# Cabeçalhos HTTP do Cloudflare Pages (copiado para dist/ pelo build).
+# Protótipo: nenhuma página deve aparecer nos motores de busca, em qualquer endereço
+# (pré-visualização, produção ou domínio próprio). Retirar quando o site for oficial,
+# junto com o <meta name="robots" content="noindex, nofollow"> das páginas.
+/*
+  X-Robots-Tag: noindex, nofollow

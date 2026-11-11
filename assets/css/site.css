@@ -51,11 +51,9 @@
   --largura: 72rem;
   --raio: 8px;
   --talao-h: 8.5rem;
-  --faixa-h: 0px;
   --ease-saida: cubic-bezier(0.16, 1, 0.3, 1);
   --sombra: 0 0.75rem 2rem -1rem rgb(43 26 16 / 0.35), 0 0.15rem 0.4rem rgb(43 26 16 / 0.08);
 }
-body:has(.prototipo) { --faixa-h: 1.9rem; }
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -125,27 +123,6 @@ p { margin: 0; text-wrap: pretty; }
 }
 .saltar:focus { top: 0.75rem; }
 
-/* ——— PROTÓTIPO: faixa “não é o site oficial”. Para remover, apagar este bloco
-   e a linha <p class="prototipo"> em index.html e em gerar-ementa.mjs desta versão. ——— */
-.prototipo {
-  margin: 0;
-  min-height: var(--faixa-h);
-  padding: max(0.4rem, env(safe-area-inset-top, 0px)) var(--borda) 0.4rem;
-  font-size: 0.8rem;
-  font-weight: 650;
-  line-height: 1.3;
-  letter-spacing: 0.02em;
-  text-align: center;
-  background: var(--rodape);
-  color: var(--rodape-texto);
-}
-@media (max-width: 39.99rem) {
-  body:has(.prototipo) { --faixa-h: 2.95rem; }
-  .prototipo__chave { display: block; }
-  .prototipo__ponto { display: none; }
-}
-/* ——— fim do bloco PROTÓTIPO ——— */
-
 /* por confirmar: traço tracejado, nunca cor */
 .pc {
   text-decoration: underline dashed;
@@ -194,7 +171,7 @@ p { margin: 0; text-wrap: pretty; }
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.9rem var(--borda);
+  padding: max(0.9rem, env(safe-area-inset-top, 0px)) var(--borda) 0.9rem;
   max-width: calc(var(--largura) + 2 * var(--borda));
   margin: 0 auto;
 }
@@ -218,7 +195,7 @@ p { margin: 0; text-wrap: pretty; }
 /* na página inicial o cabeçalho fica por cima da fotografia */
 .cabeca--foto {
   position: absolute;
-  top: var(--faixa-h); left: 0; right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 5;
   color: #fff;
 }
@@ -226,7 +203,7 @@ p { margin: 0; text-wrap: pretty; }
 /* ——— abertura: fotografia a toda a largura ——— */
 .abertura {
   position: relative;
-  height: clamp(30rem, calc(100svh - var(--faixa-h) - var(--talao-medido, var(--talao-h))), 60rem);
+  height: clamp(30rem, calc(100svh - var(--talao-medido, var(--talao-h))), 60rem);
   color: #fff;
   overflow: hidden;
   background: var(--rodape);
@@ -494,7 +471,7 @@ p { margin: 0; text-wrap: pretty; }
 }
 
 @media (min-width: 60rem) {
-  .cabeca { padding-top: 1.25rem; }
+  .cabeca { padding-top: max(1.25rem, env(safe-area-inset-top, 0px)); }
   .cabeca__nav a { font-size: 1.05rem; padding: 0 0.9rem; }
   .abertura__sub { font-size: 1.2rem; }
 
