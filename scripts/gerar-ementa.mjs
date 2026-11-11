@@ -182,6 +182,23 @@ function pagina(dados) {
   <meta name="description" content="Ementa completa da Taberna das Taipas, com preços: tapas, peixe, carne, snacks, sobremesas, cervejas, vinhos e sangrias.">
   <meta name="theme-color" content="#86401e">
   <meta name="format-detection" content="telephone=no">
+  <!-- Partilha (Open Graph e Twitter). Domínio por confirmar: troca https://tabernadastaipas.pt nas duas páginas e no gerador. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Taberna das Taipas">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:url" content="https://tabernadastaipas.pt/ementa.html">
+  <meta property="og:title" content="Ementa · Taberna das Taipas">
+  <meta property="og:description" content="Ementa completa da Taberna das Taipas, com preços: tapas, peixe, carne, snacks, sobremesas, cervejas, vinhos e sangrias.">
+  <meta property="og:image" content="https://tabernadastaipas.pt/assets/img/partilha-1200x630.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logótipo da Taberna das Taipas ao lado de uma francesinha com ovo e molho, numa taça de grés.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ementa · Taberna das Taipas">
+  <meta name="twitter:description" content="Ementa completa da Taberna das Taipas, com preços: tapas, peixe, carne, snacks, sobremesas, cervejas, vinhos e sangrias.">
+  <meta name="twitter:image" content="https://tabernadastaipas.pt/assets/img/partilha-1200x630.jpg">
+  <meta name="twitter:image:alt" content="Logótipo da Taberna das Taipas ao lado de uma francesinha com ovo e molho, numa taça de grés.">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/bubblegum-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
