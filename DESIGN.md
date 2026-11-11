@@ -1,302 +1,241 @@
 ---
 name: Taberna das Taipas
-description: Petiscos ao centro da mesa. A toalha castanha do logótipo, louça de grés pintalgado e papel de talão para reservar.
+description: "Site do restaurante: reservar mesa e ver a ementa, primeiro no telemóvel. v2 “Padrão”."
 colors:
-  toalha: "#86401e"
-  toalha-funda: "#6e3418"
+  marca: "#86401e"
+  marca-funda: "#6e3418"
   creme: "#f0d5ab"
-  creme-suave: "#e8c9a0"
-  louca: "#f7eedd"
-  aro: "#a8622c"
-  papel: "#fbf4e6"
-  papel-linha: "#e3d2b4"
-  tinta: "#3a1d0f"
-  tinta-suave: "#6b4630"
-  gema: "#b6400c"
-  gema-funda: "#96340a"
-  gema-texto: "#fff6e8"
+  sobre-marca: "#fff7ec"
+  fundo: "#fbf7f1"
+  branco: "#ffffff"
+  painel: "#f5e6cf"
+  linha: "#e6d9c6"
+  tinta: "#2b1a10"
+  tinta-suave: "#6b4f3c"
+  rodape: "#2b140a"
+  rodape-texto: "#e8d3b6"
+  sobre-foto: "#f6ead8"
 typography:
   display:
-    fontFamily: "Bubblegum Sans, Trebuchet MS, sans-serif"
-    fontSize: "clamp(3.1rem, 14.5vw, 6rem)"
+    fontFamily: "Young Serif, Georgia, serif"
+    fontSize: "clamp(2.9rem, 13vw, 5.75rem)"
     fontWeight: 400
-    lineHeight: 0.98
-    letterSpacing: "-0.01em"
-  display-largo:
-    fontFamily: "Bubblegum Sans, Trebuchet MS, sans-serif"
-    fontSize: "clamp(5rem, 7.6vw, 7.25rem)"
-    fontWeight: 400
-    lineHeight: 0.98
+    lineHeight: 1
     letterSpacing: "-0.01em"
   headline:
-    fontFamily: "Bubblegum Sans, Trebuchet MS, sans-serif"
-    fontSize: "clamp(2.5rem, 10vw, 4.5rem)"
+    fontFamily: "Young Serif, Georgia, serif"
+    fontSize: "clamp(2rem, 8vw, 3.25rem)"
     fontWeight: 400
-    lineHeight: 0.98
+    lineHeight: 1.08
     letterSpacing: "-0.01em"
   title:
-    fontFamily: "Bubblegum Sans, Trebuchet MS, sans-serif"
-    fontSize: "clamp(1.75rem, 7vw, 2.3rem)"
-    fontWeight: 400
-    lineHeight: 0.98
-  title-sm:
-    fontFamily: "Bubblegum Sans, Trebuchet MS, sans-serif"
+    fontFamily: "Young Serif, Georgia, serif"
     fontSize: "1.3rem"
     fontWeight: 400
-    lineHeight: 1.02
+    lineHeight: 1.15
+  lead:
+    fontFamily: "Young Serif, Georgia, serif"
+    fontSize: "clamp(1.25rem, 5vw, 1.55rem)"
+    fontWeight: 400
+    lineHeight: 1.45
   body:
     fontFamily: "Figtree, system-ui, -apple-system, Segoe UI, sans-serif"
     fontSize: "1.0625rem"
     fontWeight: 400
     lineHeight: 1.55
-  body-sm:
-    fontFamily: "Figtree, system-ui, -apple-system, Segoe UI, sans-serif"
-    fontSize: "0.9rem"
-    fontWeight: 400
-    lineHeight: 1.35
   label:
     fontFamily: "Figtree, system-ui, -apple-system, Segoe UI, sans-serif"
-    fontSize: "1.02rem"
-    fontWeight: 750
+    fontSize: "1rem"
+    fontWeight: 700
     lineHeight: 1
-  nav:
-    fontFamily: "Figtree, system-ui, -apple-system, Segoe UI, sans-serif"
-    fontSize: "0.98rem"
-    fontWeight: 650
-    lineHeight: 1
-  preco:
-    fontFamily: "Figtree, system-ui, -apple-system, Segoe UI, sans-serif"
-    fontWeight: 750
-    fontFeature: "\"tnum\" 1, \"lnum\" 1"
 rounded:
-  papel: "3px"
-  botao: "4px"
-  travessa: "clamp(1.2rem, 4vw, 2.2rem)"
-  travessa-foto: "clamp(0.7rem, 2.4vw, 1.4rem)"
-  pilula: "999px"
-  prato: "50%"
+  sm: "4px"
+  btn: "6px"
+  md: "8px"
+  lg: "12px"
+  pill: "999px"
 spacing:
   borda: "clamp(1.25rem, 5vw, 3rem)"
-  seccao: "clamp(4rem, 12vw, 8rem)"
-  papel: "clamp(1.25rem, 5vw, 2.25rem)"
-  item: "0.7rem"
-  alvo: "44px"
-  botao: "48px"
-  talao-h: "7.25rem"
+  seccao: "clamp(3.5rem, 10vw, 6.5rem)"
+  bloco: "1.75rem"
+  largura: "72rem"
 components:
-  button-reservar:
-    backgroundColor: "{colors.gema}"
-    textColor: "{colors.gema-texto}"
+  button-marca:
+    backgroundColor: "{colors.marca}"
+    textColor: "{colors.sobre-marca}"
     typography: "{typography.label}"
-    rounded: "{rounded.botao}"
-    padding: "0 1.25rem"
-    height: "{spacing.botao}"
-  button-reservar-hover:
-    backgroundColor: "{colors.gema-funda}"
-    textColor: "{colors.gema-texto}"
+    rounded: "{rounded.btn}"
+    padding: "0 1.35rem"
+    height: "48px"
+  button-marca-hover:
+    backgroundColor: "{colors.marca-funda}"
   button-linha:
     backgroundColor: "transparent"
     textColor: "{colors.tinta}"
     typography: "{typography.label}"
-    rounded: "{rounded.botao}"
-    padding: "0 1.25rem"
-    height: "{spacing.botao}"
-  button-creme:
-    backgroundColor: "{colors.creme}"
-    textColor: "{colors.toalha-funda}"
+    rounded: "{rounded.btn}"
+    padding: "0 1.35rem"
+    height: "48px"
+  button-claro:
+    backgroundColor: "{colors.fundo}"
+    textColor: "{colors.tinta}"
     typography: "{typography.label}"
-    rounded: "{rounded.botao}"
-    padding: "0 1.25rem"
-    height: "{spacing.botao}"
-  button-creme-hover:
-    backgroundColor: "{colors.papel}"
-    textColor: "{colors.toalha-funda}"
-  prato:
-    backgroundColor: "{colors.louca}"
+    rounded: "{rounded.btn}"
+    padding: "0 1.35rem"
+    height: "48px"
+  button-claro-hover:
+    backgroundColor: "{colors.painel}"
+  painel:
+    backgroundColor: "{colors.painel}"
     textColor: "{colors.tinta}"
-    rounded: "{rounded.prato}"
-  travessa:
-    backgroundColor: "{colors.louca}"
-    rounded: "{rounded.travessa}"
-    padding: "clamp(0.85rem, 3.2vw, 1.4rem)"
-  papel:
-    backgroundColor: "{colors.papel}"
-    textColor: "{colors.tinta}"
-    rounded: "{rounded.papel}"
-    padding: "{spacing.papel}"
+    rounded: "{rounded.md}"
+    padding: "clamp(1.25rem, 5vw, 2.25rem)"
   talao:
-    backgroundColor: "{colors.papel}"
+    backgroundColor: "{colors.branco}"
     textColor: "{colors.tinta}"
-    padding: "0.85rem clamp(1.25rem, 5vw, 3rem)"
-  nav-link:
-    textColor: "{colors.creme}"
-    typography: "{typography.nav}"
-    rounded: "{rounded.pilula}"
-    height: "{spacing.alvo}"
-  indice-link:
-    textColor: "{colors.creme}"
-    typography: "{typography.nav}"
-    rounded: "{rounded.pilula}"
+    rounded: "{rounded.lg}"
+    padding: "1.1rem 1.2rem 1.2rem"
+  indice-pilula:
+    backgroundColor: "{colors.branco}"
+    textColor: "{colors.tinta}"
+    rounded: "{rounded.pill}"
     padding: "0 0.85rem"
-    height: "{spacing.alvo}"
-  indice-grupo:
-    backgroundColor: "{colors.creme}"
-    textColor: "{colors.toalha-funda}"
-    rounded: "{rounded.pilula}"
-    height: "{spacing.alvo}"
-  item:
-    textColor: "{colors.tinta}"
-    typography: "{typography.body}"
-    padding: "{spacing.item} 0"
+    height: "44px"
+  indice-pilula-atual:
+    backgroundColor: "{colors.tinta}"
+    textColor: "{colors.fundo}"
 ---
 
 # Design System: Taberna das Taipas
 
 ## Overview
 
-**Creative North Star: "A mesa ao centro"**
+**Creative North Star: "A Casa Aberta"**
 
-O site é a mesa do grupo vista de cima. A página inteira é a toalha castanha do logótipo, com uma trama de fio muito leve, e tudo o que se mostra está pousado nela: a comida vem em pratos redondos de grés creme pintalgado com aro castanho, os lugares e as pessoas vêm em travessas de cantos arredondados, e a informação prática (horário, morada, a ementa inteira) vem em papel creme. Nada é um cartão de interface; cada superfície é um objeto da mesa.
+O site abre a porta da casa. A primeira coisa que se vê é uma fotografia real, a toda a largura, e o resto da página é claro e arrumado como uma mesa posta: fundo de linho quente, texto castanho-escuro e serifa redonda para a voz da casa. Quem decide e reserva é o visitante; o desenho não se põe à frente das fotografias, da ementa nem dos preços.
 
-A composição é solta e sobreposta, como louça posta para partilhar: pratos que saem pela borda do ecrã, pratos que se tocam, ligeiras inclinações. A densidade é baixa na página inicial e alta na ementa, onde o papel aguenta 255 linhas com preços alinhados. A letra dos títulos é a do logótipo, redonda e informal; o texto corrido é uma sans de trabalho, firme e legível. Há uma só cor viva, o laranja-gema, e pertence à reserva.
+A densidade é calma e o ritmo é vertical: secções largas com respiração generosa, uma única faixa escura a meio (o convite aos grupos) e o rodapé no mesmo castanho profundo. O castanho do logótipo é raro de propósito. Aparece no que se carrega (reservar, ligar, ligações) e no que é "da casa"; nunca como fundo de secção.
 
-A verdade dos dados faz parte da linguagem visual: o que está confirmado escreve-se a traço cheio, o que está por confirmar sublinha-se a tracejado e diz-se aos leitores de ecrã. Fotografias reais da casa, sem clientes identificáveis em destaque.
+Tudo o que não está confirmado com o restaurante leva o sublinhado tracejado, nunca uma cor. A faixa "Protótipo · não é o site oficial" no topo é temporária: sai antes de o site ir para o ar e não faz parte da marca.
 
 **Key Characteristics:**
-- Chão único castanho (toalha), sem secções brancas nem faixas de cor a toda a largura.
-- Três materiais pousados: grés (pratos e travessas), papel (informação e ementa), talão perfurado (reserva).
-- Fotografias sempre dentro de louça: no poço redondo de um prato ou no fundo de uma travessa.
-- Uma cor viva, só para reservar.
-- Um único gesto de movimento: os pratos deslizam para o centro da mesa.
-- Por confirmar = sublinhado tracejado + texto só para leitores de ecrã; nunca cor.
+- Fotografia real da casa como abertura, a toda a largura, com véus escuros só onde há texto.
+- Página clara (linho quente) com uma faixa escura a meio e o rodapé escuro.
+- Duas vozes: Young Serif para títulos e frases da casa, Figtree para tudo o que se lê ou se toca.
+- Um único acento, o castanho do logótipo, guardado para ações e marcas "da casa".
+- Talão de reserva sempre à mão: barra fixa no telemóvel, cartão flutuante no computador.
+- Movimento com uma só curva de saída exponencial; sem movimento, tudo já está no sítio.
 
 ## Colors
 
-Uma paleta de taberna tirada do logótipo: castanho de toalha, cremes de grés e papel, tinta castanha-escura, e uma gema de laranja guardada para a ação.
+Uma paleta de linho e castanho, toda tirada do logótipo, com um único acento.
 
 ### Primary
-- **Laranja-gema** (gema): o fundo do botão "Reservar no TheFork" e nada mais. Escurecido para que o texto claro (gema-texto) passe AA, com cerca de 5:1. No hover desce para gema-funda.
+- **Castanho do Logótipo** (marca): o acento único. Botão principal de reserva, ligações de morada e telefone, marca "da casa", dia de hoje no horário, títulos de grupo na ementa, anel de foco.
+- **Castanho Tostado** (marca-funda): estado de toque e de passagem do botão principal. Nunca aparece em repouso.
+- **Creme do Logótipo** (creme): o acento quando o fundo é escuro (ícones da faixa de grupos, anel de foco sobre a fotografia ou o rodapé).
 
 ### Neutral
-- **Castanho-toalha** (toalha): o chão de todas as páginas, amostrado do castanho do logótipo. Leva a trama de fio por cima; nunca é substituído por branco ou cinzento.
-- **Toalha funda** (toalha-funda): o rodapé, a tira do índice da ementa no telemóvel e o texto sobre creme.
-- **Creme do logótipo** (creme): texto e títulos sobre a toalha, anel de foco sobre a toalha, a pílula do grupo no índice e o botão creme.
-- **Creme suave** (creme-suave): texto secundário sobre a toalha (subtítulos, introduções, avisos, rodapé).
-- **Grés** (louca): o vidrado dos pratos e travessas, com o padrão de pintas por cima.
-- **Aro de grés** (aro): o aro castanho dos pratos e travessas e o contorno dos pontos de lista.
-- **Papel** (papel): talão, folha da ementa, bloco de informação prática e a tira "Ver a ementa toda".
-- **Linha de papel** (papel-linha): divisórias entre linhas da ementa e entre blocos no papel.
-- **Tinta** (tinta): texto e títulos sobre papel e grés, contorno do botão de linha, anel de foco sobre papel.
-- **Tinta suave** (tinta-suave): notas, metadados dos pratos, contagens e horas no talão.
+- **Linho Quente** (fundo): o fundo de todas as páginas e da tira do índice.
+- **Branco de Toalha** (branco): o talão de reserva e as pílulas do índice; é o que fica por cima do fundo.
+- **Pão Torrado** (painel): painéis de informação (onde e quando, avisos da ementa), prato marcado na ementa, moldura das fotos enquanto carregam.
+- **Risco de Giz** (linha): separadores de linhas da ementa, bordas do talão e do índice, trilho da barra dos pratos.
+- **Tinta de Castanha** (tinta): todo o texto e os contornos do botão de linha.
+- **Tinta Diluída** (tinta-suave): introduções, notas, metadados dos pratos, contagens.
+- **Lareira** (rodape): rodapé, faixa de grupos, faixa do protótipo e fundo enquanto a fotografia de abertura carrega.
+- **Brasa Clara** (rodape-texto): texto corrido sobre a Lareira.
+- **Texto sobre Foto** (sobre-foto) e **Sobre o Castanho** (sobre-marca): texto secundário sobre a fotografia de abertura, e texto dos botões castanhos e dos títulos sobre fundo escuro.
 
 ### Named Rules
-**The Gema Rule.** O laranja-gema só aparece no botão de reserva online. Nenhum título, ícone, sublinhado, foco ou destaque o usa. Se a gema aparece fora do talão, é um erro.
+**The Um Só Castanho Rule.** O castanho do logótipo marca o que se carrega e o que é da casa, e mais nada. Se uma secção precisa de peso, usa a Lareira (escuro) ou o Pão Torrado (painel), nunca o castanho como fundo.
 
-**The Toalha Rule.** O fundo da página é sempre a toalha. Superfícies claras existem só como objetos pousados (louça, papel, talão), com sombra própria, nunca como faixas de secção.
-
-**The Tracejado Rule.** Texto por confirmar leva sublinhado tracejado (1.5px, offset 0.28em, na cor do próprio texto) e um sufixo só para leitores de ecrã "(por confirmar)". Confirmado leva traço cheio ou nenhum. A cor nunca carrega este significado.
+**The Tracejado Rule.** "Por confirmar" é sempre sublinhado tracejado (1px, 60% da cor do texto) mais texto escondido para leitores de ecrã. Nunca cor, nunca ícone.
 
 ## Typography
 
-**Display Font:** Bubblegum Sans (com Trebuchet MS, sans-serif), auto-alojada, a letra do logótipo.
-**Body Font:** Figtree (com system-ui, Segoe UI, sans-serif), auto-alojada, eixo de peso 400–800.
+**Display Font:** Young Serif (with Georgia, serif)
+**Body Font:** Figtree (with system-ui, -apple-system, Segoe UI, sans-serif)
 
-**Character:** Títulos redondos e bem-dispostos, como escritos à mão no quadro da casa; texto corrido limpo e firme, que aguenta nomes de pratos compridos e preços.
+**Character:** Uma serifa redonda e cheia, de letreiro de casa de pasto, contra uma sem serifa geométrica e clara. A serifa fala pela casa; a Figtree informa e serve.
 
 ### Hierarchy
-- **Display** (400, display / display-largo, 0.98): o título de abertura de cada página. Medida curta (8–9ch) na página inicial.
-- **Headline** (400, headline, 0.98): títulos de secção sobre a toalha e grupos da ementa (Comida, Bebidas) sobre papel.
-- **Title** (400, title, 0.98): categorias da ementa; nos blocos de papel e no talão a mesma letra desce para 1.4–1.65rem.
-- **Title pequeno** (400, title-sm, 1.02): nome do prato nas legendas e dentro dos pratos só com texto.
-- **Body** (400, body, 1.55): texto corrido, com medida de 30–40ch.
-- **Body pequeno** (400, body-sm, 1.35): metadados de pratos, notas, horas do talão.
-- **Label** (750, label): botões.
-- **Nav** (650, nav): navegação e índice.
-- **Preço** (750, algarismos tabulares e alinhados): todos os preços, sem quebra de linha.
+- **Display** (400, clamp(2.9rem, 13vw, 5.75rem), 1): só o nome da casa sobre a fotografia de abertura, até 10ch.
+- **Headline** (400, clamp(2rem, 8vw, 3.25rem), 1.08): títulos de secção. Na ementa, o título da página (até 4.5rem) e os grupos Comida/Bebidas (até 3.25rem, em castanho).
+- **Title** (400, 1.3rem, 1.15): nomes dos pratos nos cartões, blocos do painel; as categorias da ementa sobem até 1.9rem.
+- **Lead** (400, clamp(1.25rem, 5vw, 1.55rem), 1.45): a frase de apresentação da casa, em serifa, até 34ch.
+- **Body** (400, 1.0625rem, 1.55): texto corrido, até 42–46ch; introduções a 1.08rem em Tinta Diluída.
+- **Label** (700, 1rem, 1): botões. A navegação usa 650 a 0.98–1.05rem; as notas e metadados 0.85–0.95rem.
 
 ### Named Rules
-**The Duas Vozes Rule.** Bubblegum Sans só em títulos e nomes de pratos, sempre a peso 400; tudo o resto, incluindo botões, preços e navegação, é Figtree. Os grupos do índice da ementa são a única etiqueta em Bubblegum.
+**The Duas Vozes Rule.** Young Serif só em peso 400 e só para títulos, o nome da casa e a frase de apresentação. Preços, horários, botões e listas são sempre Figtree.
 
-**The Preço Firme Rule.** Os preços são sempre Figtree 750 com algarismos tabulares, nunca quebram, e alinham à direita nas linhas da ementa.
+**The Preço Firme Rule.** Preços em Figtree 700, algarismos tabulares e alinhados, sem quebra de linha ("9,90 €").
 
 ## Layout
 
-Mobile-first, pensado para 390px de largura. A margem lateral é uma só (borda), fluida. As secções da página inicial respiram com um espaço vertical largo (seccao) e não têm fundo próprio.
+Mobile-first, com uma coluna até 48rem. Contentor de 72rem centrado, com margem lateral `borda` que respeita as safe areas do iPhone. As secções abrem com `seccao` (3.5–6.5rem) de espaço por cima e blocos internos de 1.75rem.
 
-- **A mesa:** os pratos de assinatura assentam numa grelha de 6 colunas no telemóvel e 12 a partir de 60rem, com colocação manual por prato, margens negativas e sobreposições, para parecer louça posta e não uma grelha de cartões. Largura máxima 76rem.
-- **Abertura:** no telemóvel, título alinhado à esquerda e pratos por baixo, o grande a sair pela direita do ecrã; a partir de 60rem, duas colunas (texto 0.95fr, mesa 1.05fr).
-- **Blocos de texto + objeto:** onde, grupos e história alternam texto e travessa/papel em duas colunas iguais a partir de 60rem.
-- **Ementa:** uma folha de papel com coluna de leitura de até 46rem; a partir de 60rem, coluna lateral fixa de 19rem com o talão por cima e o índice por baixo.
-- **Talão:** no telemóvel, fixo ao fundo a toda a largura, com o corpo da página a reservar talao-h de espaço; a partir de 48rem, um talão de 25rem no canto inferior direito (página inicial) ou na coluna lateral (ementa).
-- **Alvos de toque:** links e botões com pelo menos 44px de altura; botões 48px.
-- **Breakpoints:** 48rem e 60rem.
+- **Telemóvel:** os pratos da casa são uma fila deslizante com encaixe (cartões de min(78%, 20rem)) e uma barra fina que mostra a posição. O talão é uma barra fixa no fundo, e a página reserva a altura medida do talão para nada ficar por baixo. Em paisagem baixa, o talão passa a uma só linha.
+- **A partir de 48rem:** os pratos passam a grelha de 3 colunas. O talão passa a cartão de 24rem no canto inferior direito.
+- **A partir de 60rem:** grupos, onde e história em duas colunas (a foto de grupos vai para a esquerda). Na ementa, coluna lateral de 19rem, presa ao topo, com o talão por cima do índice, e a carta até 44rem.
+- **Ementa no telemóvel:** índice em tira horizontal de pílulas, presa ao topo, que desliza para manter a categoria atual à vista.
+
+**The Uma Banda Rule.** Só uma faixa escura a toda a largura no meio da página (Mesa para o grupo todo). O resto alterna pelo espaço, não por fundos.
 
 ## Elevation & Depth
 
-A profundidade é física: cada objeto pousado na toalha projeta uma sombra castanha, macia e larga, deslocada para baixo, como luz de teto sobre a mesa. Não há sombras pretas, nem duras, nem deslocadas na diagonal. A louça tem ainda sombras interiores que desenham o aro e o poço do prato.
+Quase plano. A profundidade vem da fotografia e do contraste entre o claro e a Lareira, não de camadas. Há sombras só em três sítios: o talão flutuante, a moldura das fotos dos pratos e a borda superior do talão em barra.
 
 ### Shadow Vocabulary
-- **Sombra de louça** (`0 1.4rem 2.2rem -0.9rem rgb(42 14 2 / 0.55), 0 0.3rem 0.6rem -0.2rem rgb(42 14 2 / 0.35)`): pratos e travessas.
-- **Aro** (`inset 0 0 0 var(--aro-w) var(--aro), inset 0 0 0 calc(var(--aro-w) + 2px) rgb(90 40 10 / 0.25)`): o aro castanho de cada peça de louça.
-- **Poço** (`inset 0 0.25rem 0.8rem rgb(60 25 5 / 0.35)`): o fundo côncavo onde assenta a fotografia.
-- **Sombra de papel** (`0 1.4rem 2.4rem -1.2rem rgb(42 14 2 / 0.55), 0 0.2rem 0.5rem rgb(42 14 2 / 0.25)`): blocos de papel e a folha da ementa.
-- **Sombra do talão** (`0 -0.6rem 1.6rem -0.4rem rgb(42 14 2 / 0.45)` no telemóvel; `0 1.2rem 2.4rem -0.8rem rgb(42 14 2 / 0.6)` flutuante): o talão de reserva.
+- **Pousado** (`box-shadow: 0 0.75rem 2rem -1rem rgb(43 26 16 / 0.35), 0 0.15rem 0.4rem rgb(43 26 16 / 0.08)`): o talão em cartão (computador e coluna da ementa).
+- **Prato** (`box-shadow: 0 0.6rem 1.4rem -0.9rem rgb(43 26 16 / 0.45)`): a moldura de cada foto de prato.
+- **Barra** (`box-shadow: 0 -0.5rem 1.5rem -0.75rem rgb(43 26 16 / 0.3)`): o talão fixo no fundo do telemóvel.
 
 ### Named Rules
-**The Pousado Rule.** Só objetos pousados têm sombra, e a sombra cai sempre para baixo em castanho translúcido. Texto e botões não têm sombra.
+**The Plano por Defeito Rule.** Painéis, linhas e pílulas não levam sombra. Se algo novo precisa de se destacar, recebe o Pão Torrado, não uma sombra.
 
 ## Shapes
 
-Formas de louça e de papel. Os pratos são círculos perfeitos com aro e poço; as travessas são retângulos de cantos muito arredondados (travessa), com a fotografia num retângulo mais suave (travessa-foto). O papel tem cantos quase vivos (papel), como uma folha. Os botões têm cantos pequenos (botao); a navegação e o índice usam pílulas. O logótipo é um selo redondo.
-
-Os objetos pousados inclinam-se ligeiramente: pratos de abertura até 8°, travessas e papel entre 0.6° e 1.5°. O talão tem o topo picotado, recortado por uma máscara de meias-luas de 0.9rem. Dentro do papel, os blocos separam-se com uma linha tracejada fina (papel-linha) e as linhas da ementa com uma linha cheia; entre os grandes grupos da ementa, um traço cheio de 2px em tinta.
+Cantos discretos e consistentes. Fotos, painéis e o prato marcado usam 8px; botões 6px; o talão em cartão 12px. Pílulas totalmente redondas só no índice da ementa e na marca "hoje". O logótipo é sempre circular. As linhas da ementa são separadas por um fio de 1px em Risco de Giz, nunca por caixas.
 
 ## Components
 
 ### Buttons
-Tácteis e diretos, sempre com rótulo em texto e ícone SVG de linha quando o ajuda.
-- **Shape:** cantos pequenos (rounded.botao), altura 48px.
-- **Reservar (gema):** fundo gema, texto gema-texto, Figtree 750. Só para "Reservar no TheFork".
-- **Linha:** transparente com contorno interior de 2px em tinta; para "Ligar" no talão, sobre papel.
-- **Creme:** fundo creme e texto toalha-funda; ação secundária sobre a toalha (ligar para grupos).
-- **Hover / Focus / Active:** hover escurece (gema-funda), clareia (papel) ou dá um véu de tinta a 8%, em 200ms com ease-saida; foco é um anel de 3px em creme (sobre a toalha) ou tinta (sobre papel e talão), com 3px de afastamento; ativo desce 1px.
+- **Shape:** cantos discretos (6px), altura mínima de 48px, ícone de 1.1rem antes do texto quando há.
+- **Primary (marca):** castanho do logótipo com texto Sobre o Castanho. É o único botão cheio de cor: reservar no TheFork, ligar para marcar.
+- **Linha:** transparente com contorno interior de 1.5px em Tinta. É a alternativa ao lado do principal (Ligar, no talão).
+- **Claro:** Linho Quente com texto Tinta, para usar sobre a fotografia ou a Lareira.
+- **Toque e passagem:** escala para 0.97 ao toque (120ms). O primary escurece para Castanho Tostado; o linha e o claro ganham um véu de tinta a 7% ou Pão Torrado. A passagem do rato só existe com `(hover: hover) and (pointer: fine)`.
 
 ### Cards / Containers
-Não há cartões. Há três objetos:
-- **Prato:** círculo de grés pintalgado com aro; a fotografia vive num poço redondo a 13% da borda, enquadrada por --foco e --zoom. A variante só com texto escreve no fundo do prato o nome (Bubblegum), um detalhe e o preço, em tinta.
-- **Travessa:** grés de cantos arredondados para lugares e pessoas (sala, esplanada, equipa, travessas de marisco).
-- **Papel:** folha creme de cantos quase vivos, para horário, morada, telefones e a ementa inteira. A tira "Ver a ementa toda" é um pedaço de papel com seta que avança 0.3rem no hover.
+- **Cartão de prato:** foto 4:3 em moldura de 8px com a sombra Prato, nome em Title, descrição curta em Tinta Diluída, preço firme. O cartão inteiro é a ligação para o prato na ementa. Ao tocar, a foto escurece e aproxima-se ligeiramente.
+- **Painel:** Pão Torrado, 8px, padding de 1.25–2.25rem. Blocos internos separados por um fio castanho a 20%.
 
 ### Navigation
-- **Cabeçalho:** selo do logótipo à esquerda, três links curtos à direita em Figtree 650 creme, sem fundo. Hover e página atual: sublinhado cheio de 2px.
-- **Índice da ementa:** no telemóvel, tira presa ao topo em toalha-funda que desliza na horizontal; categorias em pílulas de contorno creme a 45%, grupos em pílula creme cheia com Bubblegum. A partir de 60rem, lista vertical na coluna lateral, sem contornos, com sublinhado no hover.
+- **Cabeçalho:** logótipo circular à esquerda e três ligações em Figtree 650 (alvos de 44px). Na página inicial fica por cima da fotografia, em branco. A página atual e a passagem do rato mostram sublinhado de 2px.
+- **Índice da ementa:** pílulas brancas com contorno em Risco de Giz. A categoria atual fica em Tinta com texto Linho. Os grupos Comida e Bebidas são rótulos em serifa castanha, sem pílula. No computador vira uma lista vertical na coluna lateral, com a categoria atual em Pão Torrado.
 
 ### Talão de reserva (signature)
-O talão é um bilhete de papel perfurado no topo, sempre presente em ambas as páginas: título "Reservar mesa" em Bubblegum, horário de hoje (preenchido por JavaScript na hora de Lisboa; sem JavaScript mostra o horário completo) marcado como por confirmar, e dois botões lado a lado (gema 1.5fr, linha 1fr). Fixo ao fundo no telemóvel, flutuante no canto no computador, e na coluna lateral da ementa.
+A ação principal está sempre visível. Tem o título "Reservar mesa" em serifa, o horário de hoje à direita (o horário completo, sem JavaScript) e dois botões: TheFork (primary, mais largo) e Ligar (linha). Sobe por último ao abrir a página. Respeita a safe area de baixo do iPhone.
 
-### Linha da ementa (item)
-Nome à esquerda, preço à direita em grelha com alinhamento à linha de base; metadados por baixo em tinta-suave; separação por linha cheia em papel-linha. Os pratos da casa levam o nome a 700 e uma marca "da casa" com um pequeno prato desenhado em SVG (dois círculos concêntricos).
+### Linha da ementa
+Nome à esquerda e preço firme à direita, alinhados pela linha de base, separados por um fio de 1px. Os metadados vão por baixo, em Tinta Diluída. Os pratos da casa levam nome a 650 e a marca circular castanha. O prato aberto a partir da página inicial acende em Pão Torrado.
 
-### Movimento
-Um só gesto: os pratos e travessas deslizam e rodam um pouco para o centro da mesa, vindos da esquerda ou da direita (`translate` e `rotate`, curva ease-saida `cubic-bezier(0.16, 1, 0.3, 1)`). Na abertura acontece ao carregar (900ms, o prato pequeno 120ms depois); na mesa acompanha o scroll com `animation-timeline: view()`. Com movimento reduzido não há animação nem scroll suave.
+### Faixa do protótipo (temporária)
+Uma linha de 0.8rem em Brasa Clara sobre a Lareira, com a legenda do tracejado. Não é parte da marca: sai antes de o site ir para o ar. Remove-se apagando o bloco marcado no CSS e a linha nas duas páginas.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** pousar cada fotografia em louça: poço redondo de prato para comida, travessa para lugares e pessoas.
-- **Do** manter a toalha (#86401e) como fundo único de todas as páginas, com a trama leve por cima.
-- **Do** marcar tudo o que está por confirmar com sublinhado tracejado e o sufixo "(por confirmar)" só para leitores de ecrã.
-- **Do** escrever preços em Figtree 750 com algarismos tabulares, sem quebra.
-- **Do** dar a cada link e botão pelo menos 44px de altura e um anel de foco de 3px em creme ou tinta, conforme o chão.
-- **Do** inclinar levemente os objetos pousados (0.6°–8°) e deixá-los sobrepor-se na mesa.
-- **Do** desligar o deslize dos pratos e o scroll suave com prefers-reduced-motion.
+- **Do** abrir com uma fotografia real da casa, a toda a largura, escurecida só no topo e na base para o texto se ler.
+- **Do** guardar o castanho do logótipo (#86401e) para ações, ligações e marcas "da casa".
+- **Do** marcar tudo o que está por confirmar com o sublinhado tracejado e o texto "(por confirmar)" para leitores de ecrã.
+- **Do** manter alvos de toque de pelo menos 44px (48px nos botões) e pôr a passagem do rato atrás de `(hover: hover) and (pointer: fine)`.
+- **Do** usar a mesma curva de saída (`cubic-bezier(0.16, 1, 0.3, 1)`) em todo o movimento e deixar tudo no sítio com `prefers-reduced-motion`.
 
 ### Don't:
-- **Don't** usar o laranja-gema fora do botão de reserva online.
-- **Don't** usar cor para indicar "por confirmar"; nem sublinhado tracejado em texto confirmado.
-- **Don't** abrir secções brancas ou faixas de cor a toda a largura; o claro só existe como objeto pousado.
-- **Don't** pôr uma fotografia a toda a largura com um botão por cima, nem alinhar pratos numa grelha de cartões iguais.
-- **Don't** usar Bubblegum Sans em texto corrido, botões ou preços, nem em pesos falsos.
-- **Don't** usar sombras pretas, duras ou deslocadas na diagonal.
-- **Don't** pôr em destaque fotografias com clientes identificáveis.
-- **Don't** acrescentar outro gesto de movimento além do deslize dos pratos.
+- **Don't** usar o castanho do logótipo como fundo de secção; o peso vem da Lareira ou do painel.
+- **Don't** pôr a Young Serif em preços, horários, botões ou listas, nem em pesos que não sejam 400.
+- **Don't** acrescentar uma segunda faixa escura a meio da página.
+- **Don't** usar fotos de banco ou fotos em que apareçam clientes identificáveis.
+- **Don't** pôr sombras em painéis, linhas ou pílulas.
