@@ -5,38 +5,84 @@ primary_target: "index.html"
 related_targets: ["ementa.html"]
 ---
 
-# Site da Taberna das Taipas — página inicial e ementa
+# Site da Taberna das Taipas — página inicial e ementa (v2 “Padrão”)
 
 ## Scope and mode
-- `index.html`: Persuade. Quem organiza o jantar do grupo, no telemóvel, ao fim do dia; decide e reserva.
-- `ementa.html`: Read. Quem já quase decidiu e quer pratos e preços sem se perder em 255 itens. Gerada por `scripts/gerar-ementa.mjs` a partir de `conteudo/ementa.json`, sem JavaScript no browser.
+- `index.html`: Persuade. O público é quem organiza o jantar do grupo, no telemóvel, ao fim do dia: decide e reserva.
+- `ementa.html`: Read. O público já quase decidiu e quer ver pratos e preços sem se perder em 255 itens.
+  - Foi gerada por `versoes/v2-padrao/gerar-ementa.mjs` a partir de `conteudo/ementa.json`. Esse gerador não está neste projeto.
+  - `scripts/gerar-ementa.mjs` é o gerador da v1 e recusa substituir esta ementa.
+  - Até haver um gerador da v2, alterações à ementa fazem-se no HTML com cuidado, ou primeiro adapta-se o gerador.
 
 ## Job, action, proof
-- Ação principal: reservar (TheFork ou `tel:`), a funcionar no primeiro ecrã e no talão fixo de ambas as páginas.
-- Secundária: abrir a ementa.
-- Provas sem link ficam fora. Horário, telefones, história, música ao vivo, acessibilidade: visíveis com marca "por confirmar" (sublinhado a tracejado + texto para leitores de ecrã).
-- Fotos em destaque sem clientes identificáveis: pratos, sala, esplanada, fachada, equipa.
+- **Ação principal:** reservar, pelo TheFork ou por `tel:`.
+  - O talão está sempre à vista nas duas páginas: barra fixa no telemóvel, cartão no canto no computador, por cima do índice na ementa.
+  - Os grupos também podem ligar a partir da faixa escura.
+- **Ação secundária:** abrir a ementa.
+  - Botão "Ver a ementa" sobre a fotografia de abertura.
+  - Cada cartão de prato liga ao prato na ementa (`ementa.html#…`), onde o prato acende.
+  - "Ver a ementa completa" no fim dos pratos da casa.
+- **Provas:** as que não têm link ficam fora.
+  - Horário, telefones, "desde 2015", francesinha vegetariana, música ao vivo e acessibilidade aparecem com a marca "por confirmar": sublinhado tracejado e texto para leitores de ecrã.
+- **Fotos em destaque:** sem clientes identificáveis. Usar pratos, sala, esplanada e equipa.
 
 ## Constraints
-- HTML/CSS estáticos; JS só para "horário de hoje" no talão (sem JS mostra o horário completo).
-- Mobile-first, WCAG 2.2 AA; laranja escurecido com texto claro.
-- Sem PDF, pop-ups, música automática, fotos de banco; nem tasca velha nem cadeia genérica.
-- PT apenas; espaço para EN depois.
+- **Código:** HTML e CSS estáticos. O JavaScript (`assets/js/hoje.js`) só acrescenta:
+  - o horário de hoje no talão;
+  - a marca "hoje" no horário;
+  - a categoria atual no índice da ementa;
+  - a barra de posição dos pratos.
+  Sem JavaScript, tudo funciona e mostra o horário completo.
+- **Telemóvel e acessibilidade:**
+  - Mobile-first, WCAG 2.2 AA, alvos de toque de 44–48px.
+  - Passagem do rato só com `(hover: hover) and (pointer: fine)`.
+  - Safe areas do iPhone respeitadas.
+  - Com `prefers-reduced-motion`, nada se mexe.
+- **Fora de questão:** ementa em PDF, pop-ups, música automática e fotos de banco.
+- **Língua:** só português (PT-PT), com espaço para inglês depois.
+- **A faixa "Protótipo · não é o site oficial"** é temporária. Sai antes de o site ir para o ar: apagar o bloco marcado no CSS e a linha `<p class="prototipo">` nas duas páginas.
+- **Indexação:** as páginas levam `noindex, nofollow` enquanto forem protótipo.
 
 ## Direction contract
 
-THESIS: O site é a mesa do grupo vista de cima: cada secção é louça posta ao centro para partilhar. Recusa o hero de foto a toda a largura com botão por cima e a grelha de cartões iguais.
+THESIS: "A Casa Aberta": o site abre a porta da casa com uma fotografia real dos pratos e deixa o resto claro e arrumado, para a ementa, os preços e a reserva se lerem sem esforço. A personalidade vem das fotografias, da serifa redonda e do castanho do logótipo usado com parcimónia. A decoração não carrega a personalidade.
 
-OWN-WORLD: Toalha castanha do logótipo (#86401e) como chão de toda a página, sem secções brancas. Grés creme pintalgado com aro castanho: pratos redondos para comida, travessas de cantos arredondados para lugares e pessoas. Papel de talão creme para informação prática. Letra Bubblegum Sans (do logótipo) para títulos, sans de trabalho para texto. Uma só cor viva, laranja-gema escurecido, só para reservar. Confirmado em traço cheio; por confirmar a tracejado.
+OWN-WORLD: Sistema em DESIGN.md (v2, commit d22b4e5).
+- **Cores:** fundo Linho Quente (#fbf7f1), texto Tinta de Castanha (#2b1a10), painéis Pão Torrado (#f5e6cf), fios Risco de Giz (#e6d9c6). Um único acento, o Castanho do Logótipo (#86401e), só para ações, ligações e marcas "da casa". A Lareira (#2b140a) é usada só no rodapé, na faixa dos grupos e na faixa do protótipo.
+- **Letras:** Young Serif 400 para títulos e para a frase da casa; Figtree para tudo o resto.
+- **Movimento:** uma só curva de saída exponencial.
 
-STORY: Percebe que é uma taberna de petiscos para partilhar nas Taipas, vê os pratos da casa com preço, acredita que serve o grupo dele, reserva pelo TheFork ou liga.
+STORY: O visitante vê a francesinha e o nome da casa e percebe que é uma taberna de petiscos para partilhar nas Taipas. A seguir vê os pratos da casa com foto e preço e as linhas "também da casa", e acredita que serve o grupo dele na faixa "Mesa para o grupo todo". Confirma onde e quando, e reserva pelo talão (TheFork) ou liga.
 
-FIRST VIEWPORT: Telemóvel 390×844. Logótipo-selo no canto superior esquerdo e navegação curta à direita; título "Petiscos ao centro da mesa." grande, alinhado à borda esquerda; prato grande com os ovos rotos a sair pela direita do ecrã, prato pequeno com a francesinha sobreposto à esquerda, legendas com preço; talão "Reservar mesa" preso ao fundo com horário de hoje e botões TheFork (laranja) e Ligar.
+FIRST VIEWPORT: Telemóvel com 390×844.
+- **Faixa do protótipo** no topo.
+- **Fotografia da francesinha** a toda a largura, com véus escuros só no topo e na base.
+- **Cabeçalho branco** por cima da foto: logótipo circular à esquerda; Ementa, Grupos e Onde à direita.
+- **Em baixo, sobre a foto:**
+  - "Taberna das Taipas" em Young Serif grande;
+  - a frase "Tapas e petiscos ibéricos para partilhar ao centro da mesa, em Caldas das Taipas.";
+  - o botão claro "Ver a ementa".
+- **Talão "Reservar mesa"** preso ao fundo, com o horário de hoje e os botões TheFork (castanho) e Ligar (contorno).
 
-FORM: Mesa partilhada vista de cima, candidato 6 da lista ordenada; seed:f9d5db07a47500a0. Assinatura: os pratos deslizam para o centro da mesa ao entrar no ecrã (único gesto de movimento). Talão de reserva é região fixa em ambas as páginas.
+FORM: É a v2 "Padrão", publicada em tt-prototipo.pages.dev e importada como versão de trabalho (tag v2). Não veio de uma seed deste projeto.
+- **Ritmo da página:**
+  - abertura em fotografia;
+  - apresentação em duas vozes (título e frase em serifa);
+  - fila deslizante de 6 cartões de prato no telemóvel, que passa a grelha de 3 colunas a partir de 48rem;
+  - "Também da casa" em linhas de ementa;
+  - uma faixa escura para os grupos;
+  - painel "Onde e quando";
+  - história;
+  - rodapé escuro.
+- **Assinatura de movimento:**
+  - ao abrir, a foto assenta, o texto sobe e o talão sobe por último;
+  - ao descer, a foto de abertura fica para trás, as fotos das secções revelam-se de baixo para cima e os cartões sobem;
+  - na ementa, o índice acompanha a categoria e o prato de destino acende.
 
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+FINISH: A v2 está documentada (DESIGN.md e .impeccable/design.json, commit d22b4e5), mas ainda não passou pela revisão final do Impeccable neste projeto. Cada imagem nova leva a sua origem (embed-prompt). Qualquer alteração ao design acaba com essa revisão e com o DESIGN.md atualizado.
 
 ## Unresolved
-- Horário, telefones, alergénios, secção Vegetariano, história e música ao vivo por confirmar.
-- Política de privacidade por fazer; inglês para depois.
+- Horário, telefones, alergénios, secção Vegetariano, "desde 2015", história e música ao vivo: por confirmar com o restaurante.
+- Gerador da ementa da v2 em falta: trazer `versoes/v2-padrao/gerar-ementa.mjs` ou adaptar `scripts/gerar-ementa.mjs` para produzir o HTML da v2.
+- Ficaram na v1 (commit 99b4729) e ainda não passaram para a v2: meta tags Open Graph/Twitter com a imagem `partilha-1200x630.jpg` e a faixa sazonal "Jantares de Natal de empresa".
+- Domínio `.pt` por registar; política de privacidade por fazer; inglês para depois.
