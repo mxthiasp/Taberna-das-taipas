@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#2b140a">
   <meta name="format-detection" content="telephone=no">
   <meta name="robots" content="noindex, nofollow">
-  <!-- Partilha (Open Graph e Twitter). O endereço vem da variável SITE_URL de scripts/preparar-publicacao.mjs, que troca o marcador ao montar publicar/. -->
+  <!-- Partilha (Open Graph e Twitter). O endereço vem de SITE_URL em scripts/paginas.mjs; o build (scripts/build.mjs) troca o marcador ao montar dist/. -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Taberna das Taipas">
   <meta property="og:locale" content="pt_PT">
@@ -1256,6 +1256,7 @@
       </section>
         </section>
         <p class="carta__fim">Ementa de 09/11/2026. <span class="pc">Pode haver pratos fora da carta ao fim de semana.</span><span class="sr-only"> (por confirmar)</span></p>
+        <a class="ao-topo" href="#titulo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg><span class="ao-topo__texto">Voltar ao topo</span></a>
       </div>
     </div>
   </main>
@@ -1298,5 +1299,6 @@
   </footer>
 
   <script src="assets/js/hoje.js" defer></script>
+  <script src="assets/js/ementa.js" defer></script>
 </body>
 </html>

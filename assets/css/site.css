@@ -466,20 +466,21 @@ p { margin: 0; text-wrap: pretty; }
 
 /* ——— ecrãs médios e largos ——— */
 @media (min-width: 48rem) {
-  :root { --talao-h: 0rem; }
+  /* O talão passa a barra fina numa só linha, a toda a largura, presa ao fundo.
+     Como barra, a página reserva a altura dela (--talao-medido, medido em hoje.js)
+     e nada fica escondido por baixo: nem os cartões dos pratos, nem o rodapé.
+     O conteúdo da barra alinha com o contentor de 72rem. */
+  :root { --talao-h: 4.75rem; }
   .talao {
-    left: auto;
-    right: max(clamp(1rem, 2.5vw, 2rem), env(safe-area-inset-right, 0px));
-    bottom: calc(clamp(1rem, 2.5vw, 2rem) + env(safe-area-inset-bottom, 0px));
-    width: 24rem;
-    border: 1px solid var(--linha);
-    border-radius: 12px;
-    padding: 1.1rem 1.2rem 1.2rem;
-    box-shadow: var(--sombra);
+    padding: 0.7rem max(var(--borda), (100% - var(--largura)) / 2) calc(0.7rem + env(safe-area-inset-bottom, 0px));
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1.5rem;
   }
-  .talao__topo { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+  .talao__topo { flex-direction: row; align-items: baseline; justify-content: flex-start; gap: 1rem; }
   .talao__horas { text-align: left; }
-  .rodape__dentro { padding-bottom: 12rem; }
+  .talao__acoes { grid-template-columns: auto auto; }
+  .talao__acoes .btn { width: auto; padding: 0 1.35rem; }
 
   .pratos {
     margin: 2rem 0 0;
@@ -688,9 +689,21 @@ p { margin: 0; text-wrap: pretty; }
   .indice a[aria-current="true"] { background: var(--painel); color: var(--tinta); }
   .indice .indice__grupo a { background: none; color: var(--marca); font: 400 1.25rem var(--letra-titulo); min-height: 38px; padding: 0 0.6rem; }
   .indice .indice__grupo:not(:first-child) { margin: 0.9rem 0 0; padding-left: 0; border-left: 0; }
-  .ementa__lado .talao { order: -1; position: static; width: auto; box-shadow: var(--sombra); }
+  /* na ementa larga, o talão é um cartão no topo da coluna lateral (não tapa nada) */
+  .ementa__lado .talao {
+    order: -1;
+    position: static;
+    width: auto;
+    padding: 1.1rem 1.2rem 1.2rem;
+    border: 1px solid var(--linha);
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    grid-template-columns: none;
+    gap: 0.6rem;
+  }
+  .ementa__lado .talao__topo { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
   .ementa__lado .talao__acoes { grid-template-columns: 1fr; gap: 0.5rem; }
-  .ementa__lado .talao__acoes .btn { padding: 0 1.25rem; }
+  .ementa__lado .talao__acoes .btn { width: 100%; padding: 0 1.25rem; }
   .carta { padding: 0; }
   .grupo, .categoria, .categoria__sub, .item { scroll-margin-top: 1.5rem; }
   .pagina-ementa .rodape__dentro { padding-bottom: 2.5rem; }
@@ -799,4 +812,172 @@ p { margin: 0; text-wrap: pretty; }
     gap: clamp(2rem, 5vw, 4rem);
   }
   .natal__foto { max-width: none; }
+}
+
+/* ——— estado do talão: aberto agora / fechado (assets/js/hoje.js) ——— */
+.talao__horas[data-estado="aberto"] { color: var(--tinta); font-weight: 650; }
+.talao__horas[data-estado="aberto"]::before {
+  content: "";
+  display: inline-block;
+  width: 0.5rem; height: 0.5rem;
+  margin-right: 0.4rem;
+  border-radius: 50%;
+  background: var(--marca);
+  vertical-align: 0.08em;
+}
+
+/* ——— ementa: pesquisa (criada por assets/js/ementa.js; sem JavaScript não aparece) ——— */
+.pesquisa { padding: 0.75rem var(--borda) 0.25rem; }
+.pesquisa__campo { position: relative; }
+.pesquisa__campo svg {
+  position: absolute; left: 0.85rem; top: 50%;
+  width: 1.15rem; height: 1.15rem;
+  translate: 0 -50%;
+  color: var(--tinta-suave);
+  pointer-events: none;
+}
+.pesquisa input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 0.9rem 0 2.6rem;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background: var(--branco);
+  color: var(--tinta);
+  font: 400 1rem var(--letra-texto); /* 16px: o iPhone não aproxima a página ao tocar */
+  -webkit-appearance: none;
+  appearance: none;
+}
+.pesquisa input::placeholder { color: var(--tinta-suave); opacity: 1; }
+.pesquisa input:focus-visible { outline: 3px solid var(--marca); outline-offset: 1px; border-color: transparent; }
+.pesquisa__estado { margin-top: 0.4rem; min-height: 1.3em; font-size: 0.88rem; color: var(--tinta-suave); }
+.pesquisa__vazio { margin-top: 1.5rem; padding: 1rem 1.15rem; background: var(--painel); border-radius: var(--raio); max-width: 46ch; }
+.carta .e-fora, .indice .e-fora { display: none; }
+@media (min-width: 60rem) {
+  .pesquisa { padding: 0; }
+}
+
+/* ——— ementa: voltar ao topo ———
+   Sem JavaScript é uma ligação normal no fim da carta. Com JavaScript (classe .js no <html>)
+   passa a botão redondo fixo, acima do talão, e só aparece depois de descer um pouco. */
+.ao-topo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  margin-top: 1rem;
+  font-weight: 700;
+  color: var(--marca);
+}
+.ao-topo svg { width: 1.15rem; height: 1.15rem; flex: none; }
+.js .ao-topo {
+  position: fixed;
+  z-index: 19;
+  right: max(var(--borda), env(safe-area-inset-right, 0px));
+  bottom: calc(var(--talao-medido, var(--talao-h)) + 1rem);
+  margin: 0;
+  width: 48px; height: 48px;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--branco);
+  color: var(--tinta);
+  border: 1px solid var(--linha);
+  box-shadow: var(--sombra);
+  opacity: 0;
+  translate: 0 0.75rem;
+  pointer-events: none;
+  transition: opacity 200ms var(--ease-saida), translate 300ms var(--ease-saida), background-color 150ms var(--ease-saida);
+}
+.js .ao-topo .ao-topo__texto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.js .ao-topo.visivel { opacity: 1; translate: 0 0; pointer-events: auto; }
+.js .ao-topo:active { background: var(--painel); }
+@media (hover: hover) and (pointer: fine) {
+  .js .ao-topo:hover { background: var(--painel); }
+}
+@media (min-width: 60rem) {
+  .js .ao-topo { bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .ao-topo { transition: none; translate: none; }
+}
+
+/* ——— página 404 ——— */
+.pagina-erro .cabeca {
+  border-bottom: 1px solid var(--linha);
+  max-width: none;
+  padding-inline: max(var(--borda), (100% - var(--largura)) / 2);
+}
+.erro {
+  padding: clamp(3rem, 12vw, 7rem) var(--borda) clamp(3rem, 10vw, 6rem);
+  max-width: calc(var(--largura) + 2 * var(--borda));
+  margin: 0 auto;
+}
+.erro__titulo { font-size: clamp(2.4rem, 10vw, 4.25rem); max-width: 14ch; }
+.erro__texto { margin-top: 1rem; max-width: 40ch; font-size: 1.08rem; color: var(--tinta-suave); }
+.erro__acoes { margin-top: 1.75rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+/* ——— qr-mesa.html: cartão de mesa com o código QR da ementa (para imprimir) ——— */
+.pagina-qr { padding-bottom: 0; }
+.qr-pagina {
+  padding: clamp(1.5rem, 5vw, 3rem) var(--borda) 3rem;
+  max-width: calc(var(--largura) + 2 * var(--borda));
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+.qr-instrucoes { max-width: 42ch; display: grid; gap: 0.75rem; }
+.qr-instrucoes h1 { font-size: clamp(2rem, 8vw, 3rem); }
+.qr-instrucoes p { color: var(--tinta-suave); }
+.qr-url { color: var(--tinta); overflow-wrap: anywhere; }
+.qr-voltar { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; color: var(--marca); text-decoration: none; }
+.qr-acoes { margin-top: 0.5rem; }
+.cartao {
+  width: min(100%, 105mm);
+  aspect-ratio: 105 / 148;
+  padding: 9mm 8mm 7mm;
+  background: var(--branco);
+  color: var(--tinta);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  text-align: center;
+  gap: 3mm;
+}
+.cartao__logo { width: 21mm; height: 21mm; border-radius: 50%; }
+.cartao__titulo { font: 400 clamp(1.25rem, 5vw, 1.5rem)/1.1 var(--letra-titulo); margin: 0; }
+.cartao__qr { width: 56mm; max-width: 100%; }
+.cartao__qr .qr { display: block; width: 100%; height: auto; }
+.cartao__passo { font-weight: 650; font-size: 0.95rem; }
+.cartao__url { font-size: 0.78rem; color: var(--tinta-suave); overflow-wrap: anywhere; }
+.cartao__nota { margin-top: auto; font-size: 0.78rem; color: var(--tinta-suave); }
+.cartao--copia { display: none; }
+@media (min-width: 48rem) {
+  .qr-pagina { grid-template-columns: minmax(0, 1fr) auto; gap: 3rem; }
+}
+@media print {
+  @page { size: A4 portrait; margin: 0; }
+  html, body { background: #fff; }
+  body.pagina-qr { padding: 0; }
+  .pagina-qr .qr-instrucoes { display: none; }
+  .pagina-qr .qr-pagina { padding: 0; max-width: none; display: block; }
+  .pagina-qr .folha {
+    display: grid;
+    grid-template-columns: 105mm 105mm;
+    grid-template-rows: 148.5mm 148.5mm;
+    width: 210mm; height: 297mm;
+  }
+  .pagina-qr .cartao, .pagina-qr .cartao--copia {
+    display: grid;
+    width: 105mm; height: 148.5mm; aspect-ratio: auto;
+    border: 0; border-radius: 0; box-shadow: none;
+    outline: 0.2mm dashed #999; outline-offset: -0.1mm; /* linhas de corte */
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .pagina-qr .cartao__titulo { font-size: 17pt; }
+  .pagina-qr .cartao__passo { font-size: 10.5pt; }
+  .pagina-qr .cartao__url, .pagina-qr .cartao__nota { font-size: 8pt; }
 }

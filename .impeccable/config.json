@@ -92,6 +92,17 @@
         ],
         "createdAt": "2026-11-09T04:10:35.146Z",
         "reason": "Claude: spent decision sketch, written before DESIGN.md; not shipped"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "404.html",
+          "ementa.html",
+          "index.html"
+        ],
+        "createdAt": "2026-11-11T15:18:28.967Z",
+        "reason": "user chose v2 as the working design (tag v2) and committed DESIGN.md d22b4e5: the #fbf7f1 Linho Quente ground is the documented palette, taken from the logo"
       }
     ]
   }

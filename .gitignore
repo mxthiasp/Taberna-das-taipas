@@ -25,6 +25,7 @@ node_modules/
 # Cópias locais de versões antigas, para comparar no browser (a tag git guarda cada versão)
 versoes/
 
-# Pasta montada por scripts/preparar-publicacao.mjs para enviar para o Cloudflare Pages
+# Pasta montada por scripts/build.mjs para enviar para o Cloudflare Pages (publicar/ era o nome antigo)
+dist/
 publicar/
 .wrangler/

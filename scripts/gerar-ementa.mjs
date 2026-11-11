@@ -182,7 +182,7 @@ function pagina(dados) {
   <meta name="description" content="Ementa completa da Taberna das Taipas, com preços: tapas, peixe, carne, snacks, sobremesas, cervejas, vinhos e sangrias.">
   <meta name="theme-color" content="#86401e">
   <meta name="format-detection" content="telephone=no">
-  <!-- Partilha (Open Graph e Twitter). O endereço vem da variável SITE_URL de scripts/preparar-publicacao.mjs, que troca o marcador ao montar publicar/. -->
+  <!-- Partilha (Open Graph e Twitter). O endereço vem de SITE_URL em scripts/paginas.mjs; o build (scripts/build.mjs) troca o marcador ao montar dist/. -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Taberna das Taipas">
   <meta property="og:locale" content="pt_PT">

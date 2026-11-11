@@ -123,7 +123,7 @@ Tudo o que não está confirmado com o restaurante leva o sublinhado tracejado, 
 - Página clara (linho quente) com uma faixa escura a meio e o rodapé escuro.
 - Duas vozes: Young Serif para títulos e frases da casa, Figtree para tudo o que se lê ou se toca.
 - Um único acento, o castanho do logótipo, guardado para ações e marcas "da casa".
-- Talão de reserva sempre à mão: barra fixa no telemóvel, cartão flutuante no computador.
+- Talão de reserva sempre à mão: barra fixa no fundo (que nunca tapa conteúdo), cartão na coluna lateral da ementa larga.
 - Movimento com uma só curva de saída exponencial; sem movimento, tudo já está no sítio.
 
 ## Colors
@@ -176,7 +176,7 @@ Uma paleta de linho e castanho, toda tirada do logótipo, com um único acento.
 Mobile-first, com uma coluna até 48rem. Contentor de 72rem centrado, com margem lateral `borda` que respeita as safe areas do iPhone. As secções abrem com `seccao` (3.5–6.5rem) de espaço por cima e blocos internos de 1.75rem.
 
 - **Telemóvel:** os pratos da casa são uma fila deslizante com encaixe (cartões de min(78%, 20rem)) e uma barra fina que mostra a posição. O talão é uma barra fixa no fundo, e a página reserva a altura medida do talão para nada ficar por baixo. Em paisagem baixa, o talão passa a uma só linha.
-- **A partir de 48rem:** os pratos passam a grelha de 3 colunas. O talão passa a cartão de 24rem no canto inferior direito.
+- **A partir de 48rem:** os pratos passam a grelha de 3 colunas. O talão continua barra, numa só linha, alinhada com o contentor de 72rem; a página reserva a altura dela.
 - **A partir de 60rem:** grupos, onde e história em duas colunas (a foto de grupos vai para a esquerda). Na ementa, coluna lateral de 19rem, presa ao topo, com o talão por cima do índice, e a carta até 44rem.
 - **Ementa no telemóvel:** índice em tira horizontal de pílulas, presa ao topo, que desliza para manter a categoria atual à vista.
 
@@ -184,10 +184,10 @@ Mobile-first, com uma coluna até 48rem. Contentor de 72rem centrado, com margem
 
 ## Elevation & Depth
 
-Quase plano. A profundidade vem da fotografia e do contraste entre o claro e a Lareira, não de camadas. Há sombras só em três sítios: o talão flutuante, a moldura das fotos dos pratos e a borda superior do talão em barra.
+Quase plano. A profundidade vem da fotografia e do contraste entre o claro e a Lareira, não de camadas. Há sombras só em poucos sítios: o talão em cartão na coluna da ementa e o botão de voltar ao topo, a moldura das fotos dos pratos e a borda superior do talão em barra.
 
 ### Shadow Vocabulary
-- **Pousado** (`box-shadow: 0 0.75rem 2rem -1rem rgb(43 26 16 / 0.35), 0 0.15rem 0.4rem rgb(43 26 16 / 0.08)`): o talão em cartão (computador e coluna da ementa).
+- **Pousado** (`box-shadow: 0 0.75rem 2rem -1rem rgb(43 26 16 / 0.35), 0 0.15rem 0.4rem rgb(43 26 16 / 0.08)`): o talão em cartão na coluna lateral da ementa (a partir de 60rem) e o botão redondo de voltar ao topo.
 - **Prato** (`box-shadow: 0 0.6rem 1.4rem -0.9rem rgb(43 26 16 / 0.45)`): a moldura de cada foto de prato.
 - **Barra** (`box-shadow: 0 -0.5rem 1.5rem -0.75rem rgb(43 26 16 / 0.3)`): o talão fixo no fundo do telemóvel.
 
@@ -216,7 +216,13 @@ Cantos discretos e consistentes. Fotos, painéis e o prato marcado usam 8px; bot
 - **Índice da ementa:** pílulas brancas com contorno em Risco de Giz. A categoria atual fica em Tinta com texto Linho. Os grupos Comida e Bebidas são rótulos em serifa castanha, sem pílula. No computador vira uma lista vertical na coluna lateral, com a categoria atual em Pão Torrado.
 
 ### Talão de reserva (signature)
-A ação principal está sempre visível. Tem o título "Reservar mesa" em serifa, o horário de hoje à direita (o horário completo, sem JavaScript) e dois botões: TheFork (primary, mais largo) e Ligar (linha). Sobe por último ao abrir a página. Respeita a safe area de baixo do iPhone.
+A ação principal está sempre visível. Tem o título "Reservar mesa" em serifa, o estado em tempo real ("Aberto agora · fecha às 00:00" com um ponto castanho, "Abre às 18:00", "Fechado · abre amanhã às 18:00"; sem JavaScript, o horário completo) e dois botões: TheFork (primary) e Ligar (linha). É sempre uma barra fixa no fundo, que a página reserva por baixo para nunca tapar cartões nem texto: em duas linhas no telemóvel e numa só a partir de 48rem (e no telemóvel deitado). Só na ementa larga (60rem) passa a cartão no topo da coluna lateral. Sobe por último ao abrir a página e respeita a safe area de baixo do iPhone.
+
+### Pesquisa da ementa
+Campo branco de 48px com lupa, contorno em Risco de Giz e cantos de 8px, texto a 16px para o iPhone não aproximar a página. Filtra enquanto se escreve, sem acentos nem maiúsculas, também pelo nome da categoria; esconde categorias e entradas do índice sem resultados e anuncia a contagem para leitores de ecrã. Só existe com JavaScript.
+
+### Voltar ao topo
+Botão redondo branco de 48px com seta, sombra Pousado, no canto inferior direito acima do talão; aparece depois de descer pouco mais de um ecrã. Sem JavaScript é uma ligação castanha no fim da carta.
 
 ### Linha da ementa
 Nome à esquerda e preço firme à direita, alinhados pela linha de base, separados por um fio de 1px. Os metadados vão por baixo, em Tinta Diluída. Os pratos da casa levam nome a 650 e a marca circular castanha. O prato aberto a partir da página inicial acende em Pão Torrado.

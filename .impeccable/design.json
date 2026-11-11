@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-11T14:16:00.827Z",
+  "generatedAt": "2026-11-11T15:17:40.282Z",
   "title": "Design System: Taberna das Taipas",
   "extensions": {
     "colorMeta": {
@@ -349,7 +349,7 @@
       "Página clara (linho quente) com uma faixa escura a meio e o rodapé escuro.",
       "Duas vozes: Young Serif para títulos e frases da casa, Figtree para tudo o que se lê ou se toca.",
       "Um único acento, o castanho do logótipo, guardado para ações e marcas \"da casa\".",
-      "Talão de reserva sempre à mão: barra fixa no telemóvel, cartão flutuante no computador.",
+      "Talão de reserva sempre à mão: barra fixa no fundo (que nunca tapa conteúdo), cartão na coluna lateral da ementa larga.",
       "Movimento com uma só curva de saída exponencial; sem movimento, tudo já está no sítio."
     ],
     "rules": [
