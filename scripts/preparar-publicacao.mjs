@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 
 const raiz = join(dirname(fileURLToPath(import.meta.url)), '..');
 const destino = join(raiz, 'publicar');
-const paginas = ['index.html', 'ementa.html'];
+const paginas = ['index.html', 'ementa.html', 'site.webmanifest', 'apple-touch-icon.png'];
 
 rmSync(destino, { recursive: true, force: true });
 mkdirSync(destino);

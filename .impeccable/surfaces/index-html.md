@@ -84,5 +84,5 @@ FINISH: A v2 está documentada (DESIGN.md e .impeccable/design.json, commit d22b
 ## Unresolved
 - Horário, telefones, alergénios, secção Vegetariano, "desde 2015", história e música ao vivo: por confirmar com o restaurante.
 - Gerador da ementa da v2 em falta: trazer `versoes/v2-padrao/gerar-ementa.mjs` ou adaptar `scripts/gerar-ementa.mjs` para produzir o HTML da v2.
-- Faixa sazonal "Jantares de Natal de empresa" dentro da faixa escura dos grupos: desligar depois do Natal com o atributo hidden no <aside class="natal">. As meta tags de partilha da ementa estão escritas à mão na ementa.html; o gerador da v2, quando existir, tem de as incluir.
+- Faixa sazonal "Jantares de Natal de empresa" dentro da faixa escura dos grupos: desligar depois do Natal com o atributo hidden no <aside class="natal">. As meta tags de partilha e as ligações ao manifest/ícone do ecrã principal (site.webmanifest, apple-touch-icon.png) estão escritas à mão na ementa.html; o gerador da v2, quando existir, tem de as incluir.
 - Domínio `.pt` por registar; política de privacidade por fazer; inglês para depois.
