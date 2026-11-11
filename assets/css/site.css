@@ -997,3 +997,13 @@ p { margin: 0; text-wrap: pretty; }
   font-weight: 700;
   white-space: nowrap;
 }
+
+/* ——— seletor de língua (desligado com hidden até o inglês ser aprovado) ——— */
+.cabeca__nav .lingua[hidden] { display: none; }
+.cabeca__nav .lingua a {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding-inline: 0.6rem;
+}
+.cabeca__nav .lingua { margin-left: 0.25rem; padding-left: 0.25rem; border-left: 1px solid currentColor; display: flex; align-items: center; }

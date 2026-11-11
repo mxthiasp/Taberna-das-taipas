@@ -16,7 +16,18 @@
     1: [[18 * 60, 1440]], 2: [[18 * 60, 1440]], 3: [[18 * 60, 1440]],
     4: [[18 * 60, 1440]], 5: [[18 * 60, 1440]], 6: [[18 * 60, 1440]]
   };
-  var NOMES = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
+  // Textos na língua da página (<html lang="en"> → inglês; o resto → português).
+  var EN = /^en/i.test(document.documentElement.lang);
+  var T = EN ? {
+    aberto: 'Open now · closes at ', abre: 'Opens at ', fechado: 'Closed · opens ', amanha: 'tomorrow', as: ' at ',
+    nomes: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    porConfirmar: ' (hours to be confirmed)', hoje: 'today'
+  } : {
+    aberto: 'Aberto agora · fecha às ', abre: 'Abre às ', fechado: 'Fechado · abre ', amanha: 'amanhã', as: ' às ',
+    nomes: ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'],
+    porConfirmar: ' (horário por confirmar)', hoje: 'hoje'
+  };
+  var NOMES = T.nomes;
   var DIAS_EN = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   // Dia da semana e minutos desde a meia-noite, na hora de Lisboa.
@@ -44,21 +55,21 @@
     var ontem = HORARIO[(dia + 6) % 7];
     for (i = 0; i < ontem.length; i++) {
       p = ontem[i];
-      if (p[1] > 1440 && min < p[1] - 1440) return { aberto: true, texto: 'Aberto agora · fecha às ' + hora(p[1]) };
+      if (p[1] > 1440 && min < p[1] - 1440) return { aberto: true, texto: T.aberto + hora(p[1]) };
     }
     var hoje = HORARIO[dia];
     for (i = 0; i < hoje.length; i++) {
       p = hoje[i];
-      if (min >= p[0] && min < p[1]) return { aberto: true, texto: 'Aberto agora · fecha às ' + hora(p[1]) };
+      if (min >= p[0] && min < p[1]) return { aberto: true, texto: T.aberto + hora(p[1]) };
     }
     for (i = 0; i < hoje.length; i++) {
-      if (hoje[i][0] > min) return { aberto: false, texto: 'Abre às ' + hora(hoje[i][0]) };
+      if (hoje[i][0] > min) return { aberto: false, texto: T.abre + hora(hoje[i][0]) };
     }
     for (var d = 1; d <= 7; d++) {
       var outro = HORARIO[(dia + d) % 7];
       if (outro.length) {
-        var quando = d === 1 ? 'amanhã' : NOMES[(dia + d) % 7];
-        return { aberto: false, texto: 'Fechado · abre ' + quando + ' às ' + hora(outro[0][0]) };
+        var quando = d === 1 ? T.amanha : NOMES[(dia + d) % 7];
+        return { aberto: false, texto: T.fechado + quando + T.as + hora(outro[0][0]) };
       }
     }
     return null;
@@ -75,7 +86,7 @@
     pc.textContent = e.texto;
     var sr = document.createElement('span');
     sr.className = 'sr-only';
-    sr.textContent = ' (horário por confirmar)';
+    sr.textContent = T.porConfirmar;
     el.appendChild(pc);
     el.appendChild(sr);
   }
@@ -108,7 +119,7 @@
         dd.classList.add('hoje');
         var m = document.createElement('span');
         m.className = 'hoje__marca';
-        m.textContent = 'hoje';
+        m.textContent = T.hoje;
         dd.appendChild(document.createTextNode(' '));
         dd.appendChild(m);
       });

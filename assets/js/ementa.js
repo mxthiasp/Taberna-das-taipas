@@ -2,6 +2,19 @@
 // não há campo de pesquisa e “Voltar ao topo” é uma ligação normal no fim da carta.
 (function () {
   document.documentElement.classList.add('js');
+  // Textos na língua da página (<html lang="en"> → inglês; o resto → português).
+  var EN = /^en/i.test(document.documentElement.lang);
+  var T = EN ? {
+    rotulo: 'Search the menu', marcador: 'Search dishes and drinks',
+    nenhum: 'No results.', um: '1 result.', varios: ' results.',
+    vazio: function (q) { return 'Nothing found for “' + q + '”. Try another word, or ask our team.'; },
+    ajuda: function (n) { return 'Filters the ' + n + ' dishes and drinks as you type.'; }
+  } : {
+    rotulo: 'Procurar na ementa', marcador: 'Procurar prato ou bebida',
+    nenhum: 'Nenhum resultado.', um: '1 resultado.', varios: ' resultados.',
+    vazio: function (q) { return 'Não encontrámos “' + q + '” na ementa. Experimente outra palavra ou pergunte à equipa.'; },
+    ajuda: function (n) { return 'Filtra os ' + n + ' pratos e bebidas enquanto escreve.'; }
+  };
 
   // ——— Pesquisa ———
   var lado = document.querySelector('.ementa__lado');
@@ -17,10 +30,10 @@
     caixa.className = 'pesquisa';
     caixa.setAttribute('role', 'search');
     caixa.innerHTML =
-      '<label class="sr-only" for="pesquisa">Procurar na ementa</label>' +
+      '<label class="sr-only" for="pesquisa">' + T.rotulo + '</label>' +
       '<div class="pesquisa__campo">' +
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>' +
-      '<input id="pesquisa" type="search" placeholder="Procurar prato ou bebida" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="search">' +
+      '<input id="pesquisa" type="search" placeholder="' + T.marcador + '" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="search">' +
       '</div>' +
       '<p class="pesquisa__estado" aria-live="polite"></p>';
     lado.insertBefore(caixa, indice);
@@ -90,11 +103,11 @@
         estado.textContent = '';
         vazio.hidden = true;
       } else if (n === 0) {
-        estado.textContent = 'Nenhum resultado.';
-        vazio.textContent = 'Não encontrámos “' + campo.value.trim() + '” na ementa. Experimente outra palavra ou pergunte à equipa.';
+        estado.textContent = T.nenhum;
+        vazio.textContent = T.vazio(campo.value.trim());
         vazio.hidden = false;
       } else {
-        estado.textContent = n === 1 ? '1 resultado.' : n + ' resultados.';
+        estado.textContent = n === 1 ? T.um : n + T.varios;
         vazio.hidden = true;
       }
     };
@@ -113,7 +126,7 @@
     var ajuda = document.createElement('span');
     ajuda.id = 'pesquisa-ajuda';
     ajuda.className = 'sr-only';
-    ajuda.textContent = 'Filtra os ' + total + ' pratos e bebidas enquanto escreve.';
+    ajuda.textContent = T.ajuda(total);
     caixa.appendChild(ajuda);
   }
 

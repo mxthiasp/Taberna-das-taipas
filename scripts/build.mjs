@@ -55,6 +55,11 @@ for (const p of RAIZ) {
     cpSync(join(raiz, p), join(destino, p));
   }
 }
+// Línguas: en/ (rascunho em inglês) só entra na dist/ quando for aprovada. Para a publicar,
+// acrescentar 'en' a esta lista e ligar o seletor de língua (tirar o hidden do <li class="lingua">).
+const LINGUAS_APROVADAS = [];
+for (const l of LINGUAS_APROVADAS) cpSync(join(raiz, l), join(destino, l), { recursive: true });
+
 cpSync(join(raiz, 'assets'), join(destino, 'assets'), {
   recursive: true,
   filter: (f) => !f.endsWith('.json') && !/(^|[\\/])(Thumbs\.db|desktop\.ini|\.DS_Store)$/.test(f)

@@ -1,0 +1,259 @@
+<!doctype html>
+<!-- Rascunho em inglês, por aprovar. Fica fora da dist/ até ser aprovado (scripts/build.mjs). -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Taberna das Taipas · Tapas to share in Caldas das Taipas</title>
+  <meta name="description" content="Iberian tapas, francesinhas and sparkling wine sangria to share at the centre of the table, in Caldas das Taipas, Guimarães. Book on TheFork or by phone.">
+  <meta name="theme-color" content="#2b140a">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="../assets/img/favicon.png" type="image/png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Taberna">
+  <link rel="preload" href="../assets/fonts/young-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+  <a class="saltar" href="#conteudo">Skip to content</a>
+
+  <header class="cabeca cabeca--foto">
+    <a class="cabeca__logo" href="./" aria-label="Taberna das Taipas, home">
+      <img src="../assets/img/logo-320.webp" width="320" height="320" alt="">
+    </a>
+    <nav class="cabeca__nav" aria-label="Main">
+      <ul>
+        <li><a href="ementa.html">Menu</a></li>
+        <li><a href="#grupos">Groups</a></li>
+        <li><a href="#onde">Find us</a></li>
+        <!-- Seletor de língua: desligado até o inglês ser aprovado. Para ligar, tirar o hidden. -->
+        <li class="lingua" hidden><a href="../" hreflang="pt-PT" lang="pt-PT"><span class="sr-only">Página em português</span><span aria-hidden="true">PT</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="abertura" aria-labelledby="titulo">
+      <img class="abertura__foto" src="../assets/img/francesinha-1280.webp" srcset="../assets/img/francesinha-640.webp 640w, ../assets/img/francesinha-1280.webp 1280w, ../assets/img/francesinha-2048.jpg 2048w" sizes="100vw" width="1280" height="1254" alt="Close-up of the house francesinha, with melted cheese and sauce." fetchpriority="high">
+      <div class="abertura__texto">
+        <h1 class="abertura__titulo" id="titulo">Taberna das Taipas</h1>
+        <p class="abertura__sub">Iberian tapas and petiscos to share at the centre of the table, in Caldas das Taipas.</p>
+        <div class="abertura__acoes">
+          <a class="btn btn--claro" href="ementa.html">See the menu
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccao apresentacao" aria-labelledby="t-apresentacao">
+      <h2 class="seccao__titulo" id="t-apresentacao">Petiscos in the middle of the table</h2>
+      <p>The generous portions of a Minho tavern at the pace of a gastrobar: order a little of everything, put it in the middle and everyone helps themselves. Francesinhas, broken eggs, seafood and sparkling wine sangria, <span class="pc">since 2015</span><span class="sr-only"> (to be confirmed)</span>.</p>
+    </section>
+
+    <section class="seccao" id="da-casa" aria-labelledby="t-casa">
+      <h2 class="seccao__titulo" id="t-casa">House favourites</h2>
+      <p class="seccao__intro">Our signature dishes, at menu prices. Names in Portuguese, as on the menu.</p>
+
+      <ul class="pratos">
+        <li class="prato">
+          <div class="prato__moldura"><img src="../assets/img/francesinha-640.webp" srcset="../assets/img/francesinha-640.webp 640w, ../assets/img/francesinha-1280.webp 1280w" sizes="(min-width: 48rem) 23rem, 78vw" width="640" height="627" alt="Francesinha with melted cheese and sauce, close up." loading="lazy"></div>
+          <h3 lang="pt-PT"><a class="prato__ligacao" href="ementa.html#snacks-francesinha-lombo-de-boi-especial-a-taberna">Francesinha (lombo de boi) especial à taberna</a></h3>
+          <p>The Porto sandwich under melted cheese and sauce, with beef tenderloin · <span class="preco">12,40 €</span> · half portion <span class="preco">9,90 €</span></p>
+        </li>
+        <li class="prato">
+          <div class="prato__moldura"><img src="../assets/img/ovos-rotos-640.webp" srcset="../assets/img/ovos-rotos-640.webp 640w, ../assets/img/ovos-rotos-1280.webp 1280w" sizes="(min-width: 48rem) 23rem, 78vw" width="640" height="853" alt="Ovos rotos: three fried eggs over chips, surrounded by cured ham." loading="lazy"></div>
+          <h3 lang="pt-PT"><a class="prato__ligacao" href="ementa.html#tapas-ovos-rotos-com-presunto">Ovos rotos com presunto</a></h3>
+          <p>“Broken eggs” over chips, with cured ham · <span class="preco">9,90 €</span></p>
+        </li>
+        <li class="prato">
+          <div class="prato__moldura"><img src="../assets/img/burrata-640.webp" srcset="../assets/img/burrata-640.webp 640w, ../assets/img/burrata-1280.webp 1280w" sizes="(min-width: 48rem) 23rem, 78vw" width="640" height="853" alt="Whole burrata on rocket, with cured ham and tomato." loading="lazy"></div>
+          <h3 lang="pt-PT"><a class="prato__ligacao" href="ementa.html#tapas-burrata-de-bufala-com-azeite-trufado-presunto-rucula-e-nozes">Burrata de búfala</a></h3>
+          <p>Buffalo burrata, truffle olive oil, cured ham, rocket and walnuts · <span class="preco">9,90 €</span></p>
+        </li>
+        <li class="prato">
+          <div class="prato__moldura"><img src="../assets/img/hamburguer-640.webp" srcset="../assets/img/hamburguer-640.webp 640w, ../assets/img/hamburguer-1280.webp 1280w" sizes="(min-width: 48rem) 23rem, 78vw" width="640" height="853" alt="Handmade burger with cheese, egg and rocket." loading="lazy"></div>
+          <h3 lang="pt-PT"><a class="prato__ligacao" href="ementa.html#snacks-o-hamburguer-artesanal-black-angus-a-taberna">Hambúrguer artesanal</a></h3>
+          <p>Handmade Black Angus burger, house style · <span class="preco">10,90 €</span></p>
+        </li>
+        <li class="prato">
+          <div class="prato__moldura"><img src="../assets/img/mariscos-640.webp" srcset="../assets/img/mariscos-640.webp 640w, ../assets/img/mariscos-1280.webp 1280w" sizes="(min-width: 48rem) 23rem, 78vw" width="640" height="484" alt="Seafood platter with stuffed brown crab, prawns, mussels with vinaigrette and lemon." loading="lazy"></div>
+          <h3 lang="pt-PT"><a class="prato__ligacao" href="ementa.html#peixe-misto-de-mariscos">Misto de mariscos</a></h3>
+          <p>Seafood platter: stuffed brown crab, boiled prawns, mussels with vinaigrette · <span class="preco">39,90 €</span></p>
+        </li>
+        <li class="prato">
+          <div class="prato__moldura"><img src="../assets/img/sobremesas-640.webp" width="640" height="673" alt="A plate of desserts to share: cakes, ice cream, mousse and fruit." loading="lazy"></div>
+          <h3><a class="prato__ligacao" href="ementa.html#sobremesas">Desserts</a></h3>
+          <p>change with the season · from <span class="preco">4,90 €</span></p>
+        </li>
+      </ul>
+      <div class="pratos__dica" aria-hidden="true">
+        <span class="pratos__barra"><span></span></span>
+        <span>Swipe to see more</span>
+      </div>
+
+      <div class="tambem">
+        <h3>Also from the house</h3>
+        <ul class="linhas">
+          <li class="linha"><span class="linha__nome" lang="pt-PT"><a href="ementa.html#tapas-fondue-de-queijo-brie-crocante-de-pao-e-frutos-do-bosque">Fondue de queijo brie</a></span><span class="preco">7,90 €</span><span class="linha__meta">Brie fondue with crispy bread and forest berries · 5&nbsp;pieces</span></li>
+          <li class="linha"><span class="linha__nome" lang="pt-PT"><a href="ementa.html#tapas-camarao-selvagem-azeite-e-alho-whisky-flambe">Camarão selvagem flambé em whisky</a></span><span class="preco">11,40 €</span><span class="linha__meta">Wild prawns in olive oil and garlic, flambéed with whisky · 5&nbsp;pieces</span></li>
+          <li class="linha"><span class="linha__nome" lang="pt-PT"><a href="ementa.html#sangrias">Sangria de espumante</a></span><span class="preco">16,90 €</span><span class="linha__meta">Sparkling wine sangria: pineapple, forest berries, kiwi, mango or passion fruit</span></li>
+          <li class="linha"><span class="linha__nome" lang="pt-PT"><a href="ementa.html#vegetariano-francesinha-especial"><span class="pc">Francesinha vegetariana</span><span class="sr-only" lang="en"> (to be confirmed)</span></a></span><span class="preco">11,90 €</span><span class="linha__meta">Vegetarian francesinha, from the vegetarian section</span></li>
+        </ul>
+      </div>
+
+      <p class="para-ementa"><a class="btn btn--linha" href="ementa.html">See the full menu
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></a></p>
+    </section>
+
+    <section class="seccao banda" id="grupos" aria-labelledby="t-grupos">
+      <div class="grupos">
+        <figure class="grupos__foto foto">
+          <img src="../assets/img/sala-640.webp" srcset="../assets/img/sala-640.webp 640w, ../assets/img/sala-1080.webp 1080w" sizes="(min-width: 60rem) 34rem, 92vw" width="640" height="480" alt="The dining room set for a group dinner: long tables, velvet chairs, warm lamps and gold and black balloons." loading="lazy">
+        </figure>
+        <div class="grupos__texto">
+          <h2 class="seccao__titulo" id="t-grupos">A table for the whole group</h2>
+          <p class="seccao__intro">Our menu is made for sharing: birthdays, work dinners, friends on a Friday night. The wooden tables join up for large groups.</p>
+          <ul class="factos">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Large groups and private events: call ahead to arrange the menu and the space.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Covered terrace, with pets welcome outside.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="pc">Live music or a DJ on some nights.</span><span class="sr-only"> (to be confirmed)</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="pc">Step-free entrance and an accessible toilet.</span><span class="sr-only"> (to be confirmed)</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="pc">Takeaway by phone, and delivery with Glovo.</span><span class="sr-only"> (to be confirmed)</span></li>
+          </ul>
+          <p class="grupos__acao"><a class="btn btn--claro" href="tel:+351937305687" aria-label="Call to book for your group: +351 937 305 687 (number to be confirmed)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            Call to book for your group</a></p>
+        </div>
+      </div>
+      <!-- ═══ FAIXA SAZONAL: Jantares de Natal de empresa ═══
+           Para desligar depois do Natal, acrescenta o atributo hidden:
+             <aside class="natal" hidden aria-labelledby="t-natal">
+           Para voltar a ligar no próximo ano, tira-o. Com hidden, a foto nem é descarregada. -->
+      <aside class="natal" aria-labelledby="t-natal">
+        <figure class="natal__foto foto">
+          <img src="../assets/img/natal-640.webp" srcset="../assets/img/natal-640.webp 640w, ../assets/img/natal-960.webp 960w" sizes="(min-width: 48rem) 16rem, 15rem" width="640" height="853" alt="The entrance of Taberna das Taipas at night, with a Christmas tree of white lights and a star on top." loading="lazy">
+        </figure>
+        <div class="natal__texto">
+          <h3 id="t-natal">Christmas work dinners</h3>
+          <p>We join the tables for the whole team, the petiscos go in the middle and the sparkling wine sangria is kept for the toast. We’ll plan the group menu and the space with you.</p>
+          <p class="natal__nota">Fridays and Saturdays tend to fill up: book ahead, by phone. <span class="pc">Christmas dates and menus</span><span class="sr-only"> (to be confirmed)</span> to be arranged with us.</p>
+          <p class="natal__acao"><a class="btn btn--claro" href="tel:+351937305687" aria-label="Call to book your Christmas dinner: +351 937 305 687 (number to be confirmed)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            Call to book your dinner</a></p>
+        </div>
+      </aside>
+      <!-- ═══ fim da faixa sazonal ═══ -->
+    </section>
+
+    <section class="seccao" id="onde" aria-labelledby="t-onde">
+      <h2 class="seccao__titulo" id="t-onde">Where and when</h2>
+      <p class="seccao__intro">On the ground floor, with a covered terrace out front.</p>
+
+      <div class="onde">
+        <div class="onde__painel">
+          <div class="onde__bloco">
+            <h3>Opening hours<span class="sr-only"> (to be confirmed)</span></h3>
+            <dl class="horario">
+              <dt data-dias="1 2 3 4 5 6">Monday to Saturday</dt><dd><span class="pc nw">18:00–00:00</span></dd>
+              <dt data-dias="0">Sunday</dt><dd><span class="pc"><span class="nw">12:00–15:00</span> and <span class="nw">17:00–22:30</span></span></dd>
+            </dl>
+            <p class="nota">Kitchen open from <span class="pc">19:00</span><span class="sr-only"> (to be confirmed)</span> on weekdays. Annual holidays are announced on Instagram and Facebook.</p>
+          </div>
+
+          <div class="onde__bloco">
+            <h3>Address</h3>
+            <address class="morada">Rua Professor Manuel José Pereira, 630&nbsp;R/C<br>4805-128 Caldas das Taipas, Guimarães</address>
+            <p class="nota"><span class="pc">200 m</span><span class="sr-only"> (to be confirmed)</span> from the Caldas das Taipas secondary school <span lang="pt-PT">(Escola Secundária)</span>.</p>
+            <a class="ligacao" href="https://www.google.com/maps/search/?api=1&amp;query=Taberna+das+Taipas%2C+Rua+Professor+Manuel+Jos%C3%A9+Pereira+630%2C+4805-128+Caldas+das+Taipas" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5a7 7 0 0 1 14 0C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+              Open in Google Maps</a>
+          </div>
+
+          <div class="onde__bloco">
+            <h3>Phone<span class="sr-only"> (numbers to be confirmed)</span></h3>
+            <ul class="telefones">
+              <li><a href="tel:+351937305687"><span class="pc">+351 937 305 687</span></a></li>
+              <li><a href="tel:+351937593888"><span class="pc">+351 937 593 888</span></a></li>
+            </ul>
+            <p class="nota">Book by phone or on TheFork. We don’t take bookings by WhatsApp or email.</p>
+          </div>
+        </div>
+
+        <figure class="onde__foto foto">
+          <img src="../assets/img/esplanada-640.webp" srcset="../assets/img/esplanada-640.webp 640w, ../assets/img/esplanada-1280.webp 1280w" sizes="(min-width: 60rem) 34rem, 92vw" width="640" height="853" alt="The covered terrace of Taberna das Taipas, with wooden tables set." loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="seccao" id="historia" aria-labelledby="t-historia">
+      <div class="historia">
+        <div class="historia__texto">
+          <h2 class="seccao__titulo" id="t-historia">From Taipas, for Taipas</h2>
+          <p class="seccao__intro">The Taberna opened in <span class="pc">October 2015</span><span class="sr-only"> (to be confirmed)</span>, started by <span class="pc">Miguel Pereira</span><span class="sr-only"> (to be confirmed)</span> after <span class="pc">more than twenty years</span><span class="sr-only"> (to be confirmed)</span> in hotels and restaurants.</p>
+          <p>The town had good restaurants serving full plates, but nowhere relaxed for small plates to share in the middle of the table. The name is a tribute to Caldas das Taipas.</p>
+          <p>The recipes bring together Minho and Iberian tradition (game alheira with turnip greens, broken eggs, queen scallops from the griddle) with ideas of our own, such as the brie fondue with forest berries and the whisky-flambéed prawns. And the francesinha sauce, of course.</p>
+        </div>
+        <figure class="historia__foto foto">
+          <img src="../assets/img/equipa-640.webp" srcset="../assets/img/equipa-640.webp 640w, ../assets/img/equipa-1280.webp 1280w" sizes="(min-width: 60rem) 34rem, 92vw" width="640" height="300" alt="Four members of the Taberna das Taipas team, in brown aprons, by the wine rack." loading="lazy">
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape__dentro">
+      <div class="rodape__grelha">
+        <div class="rodape__casa">
+          <img src="../assets/img/logo-320.webp" width="320" height="320" alt="" loading="lazy">
+          <h2>Taberna das Taipas</h2>
+          <address class="morada">Rua Professor Manuel José Pereira, 630&nbsp;R/C<br>4805-128 Caldas das Taipas, Guimarães</address>
+        </div>
+        <div>
+          <h2>Bookings</h2>
+          <ul>
+            <li><a href="https://www.thefork.pt/restaurante/taberna-das-taipas-r754633" rel="noopener">TheFork</a></li>
+            <li><a href="tel:+351937305687"><span class="pc">937 305 687</span><span class="sr-only"> (to be confirmed)</span></a></li>
+            <li><a href="tel:+351937593888"><span class="pc">937 593 888</span><span class="sr-only"> (to be confirmed)</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Social</h2>
+          <ul>
+            <li><a href="https://www.instagram.com/taberna_das_taipas/" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/tabernadastaipas/" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Legal</h2>
+          <ul>
+            <li><a href="https://www.livroreclamacoes.pt/Inicio/" rel="noopener" hreflang="pt-PT">Complaints book <span lang="pt-PT">(Livro de Reclamações)</span></a></li>
+            <li><a href="../privacidade.html" hreflang="pt-PT">Privacy policy (in Portuguese)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="rodape__legenda">
+        <p>Prototype. Anything <span class="pc">with a dashed underline</span> is still to be confirmed with the restaurant.</p>
+        <p>© Taberna das Taipas</p>
+      </div>
+    </div>
+  </footer>
+
+  <aside class="talao" aria-labelledby="talao-titulo">
+    <div class="talao__topo">
+      <p class="talao__titulo" id="talao-titulo">Book a table</p>
+      <p class="talao__horas" id="talao-horas"><span class="pc">Mon–Sat 18:00–00:00 · Sun 12:00–15:00 and 17:00–22:30</span><span class="sr-only"> (hours to be confirmed)</span></p>
+    </div>
+    <div class="talao__acoes">
+      <a class="btn btn--marca" href="https://www.thefork.pt/restaurante/taberna-das-taipas-r754633" rel="noopener">Book on TheFork</a>
+      <a class="btn btn--linha" href="tel:+351937305687" aria-label="Call +351 937 305 687 (number to be confirmed)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        Call</a>
+    </div>
+  </aside>
+
+  <script src="../assets/js/hoje.js" defer></script>
+</body>
+</html>
