@@ -45,6 +45,11 @@ for (const p of RAIZ) {
     let html;
     try { html = substituir(readFileSync(join(raiz, p), 'utf8')); }
     catch (e) { console.error(`${p}: ${e.message}`); process.exit(1); }
+    // dados estruturados: cada <script type="application/ld+json"> tem de ser JSON válido
+    for (const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+      try { JSON.parse(m[1]); }
+      catch (e) { console.error(`${p}: JSON-LD inválido (${e.message}).`); process.exit(1); }
+    }
     writeFileSync(join(destino, p), html);
   } else {
     cpSync(join(raiz, p), join(destino, p));

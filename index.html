@@ -32,6 +32,110 @@
   <link rel="preload" href="assets/fonts/young-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/site.css">
+  <!-- Dados estruturados schema.org (Restaurant). {{SITE_URL}} é trocado pelo build.
+       Horário e telefones por confirmar com o restaurante: se mudarem, atualizar aqui,
+       no horário da secção “Onde e quando” e em assets/js/hoje.js. Coordenadas da ficha do Google Maps. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "@id": "{{SITE_URL}}/#restaurante",
+    "name": "Taberna das Taipas",
+    "description": "Tapas ibéricas, francesinhas e sangrias de espumante para partilhar ao centro da mesa, em Caldas das Taipas, Guimarães.",
+    "url": "{{SITE_URL}}/",
+    "logo": "{{SITE_URL}}/assets/img/icone-512.png",
+    "image": [
+      "{{SITE_URL}}/assets/img/partilha-1200x630.jpg",
+      "{{SITE_URL}}/assets/img/francesinha-2048.jpg"
+    ],
+    "servesCuisine": [
+      "Petiscos",
+      "Tapas",
+      "Cozinha ibérica",
+      "Francesinha"
+    ],
+    "hasMenu": "{{SITE_URL}}/ementa",
+    "acceptsReservations": "https://www.thefork.pt/restaurante/taberna-das-taipas-r754633",
+    "telephone": "+351937305687",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+351937305687",
+        "contactType": "reservations",
+        "areaServed": "PT",
+        "availableLanguage": "pt-PT"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+351937593888",
+        "contactType": "reservations",
+        "areaServed": "PT",
+        "availableLanguage": "pt-PT"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Professor Manuel José Pereira, 630 R/C",
+      "postalCode": "4805-128",
+      "addressLocality": "Caldas das Taipas, Guimarães",
+      "addressRegion": "Braga",
+      "addressCountry": "PT"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 41.4844157,
+      "longitude": -8.3514151
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "18:00",
+        "closes": "00:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "12:00",
+        "closes": "15:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "17:00",
+        "closes": "22:30"
+      }
+    ],
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.thefork.pt/restaurante/taberna-das-taipas-r754633",
+        "inLanguage": "pt-PT",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      },
+      "result": {
+        "@type": "FoodEstablishmentReservation",
+        "name": "Reserva de mesa"
+      }
+    },
+    "sameAs": [
+      "https://www.instagram.com/taberna_das_taipas/",
+      "https://www.facebook.com/tabernadastaipas/",
+      "https://www.thefork.pt/restaurante/taberna-das-taipas-r754633"
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
