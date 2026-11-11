@@ -84,5 +84,5 @@ FINISH: A v2 está documentada (DESIGN.md e .impeccable/design.json, commit d22b
 ## Unresolved
 - Horário, telefones, alergénios, secção Vegetariano, "desde 2015", história e música ao vivo: por confirmar com o restaurante.
 - Gerador da ementa da v2 em falta: trazer `versoes/v2-padrao/gerar-ementa.mjs` ou adaptar `scripts/gerar-ementa.mjs` para produzir o HTML da v2.
-- Ficaram na v1 (commit 99b4729) e ainda não passaram para a v2: meta tags Open Graph/Twitter com a imagem `partilha-1200x630.jpg` e a faixa sazonal "Jantares de Natal de empresa".
+- Faixa sazonal "Jantares de Natal de empresa" dentro da faixa escura dos grupos: desligar depois do Natal com o atributo hidden no <aside class="natal">. As meta tags de partilha da ementa estão escritas à mão na ementa.html; o gerador da v2, quando existir, tem de as incluir.
 - Domínio `.pt` por registar; política de privacidade por fazer; inglês para depois.

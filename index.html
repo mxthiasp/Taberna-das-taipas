@@ -8,6 +8,23 @@
   <meta name="theme-color" content="#2b140a">
   <meta name="format-detection" content="telephone=no">
   <meta name="robots" content="noindex, nofollow">
+  <!-- Partilha (Open Graph e Twitter). Domínio por confirmar: troca https://tabernadastaipas.pt nas duas páginas. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Taberna das Taipas">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:url" content="https://tabernadastaipas.pt/">
+  <meta property="og:title" content="Taberna das Taipas · Petiscos para partilhar em Caldas das Taipas">
+  <meta property="og:description" content="Tapas ibéricas, francesinhas e sangrias de espumante para partilhar ao centro da mesa, em Caldas das Taipas, Guimarães. Reserve pelo TheFork ou por telefone.">
+  <meta property="og:image" content="https://tabernadastaipas.pt/assets/img/partilha-1200x630.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logótipo da Taberna das Taipas ao lado de uma francesinha com ovo e molho, numa taça de grés.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Taberna das Taipas · Petiscos para partilhar em Caldas das Taipas">
+  <meta name="twitter:description" content="Tapas ibéricas, francesinhas e sangrias de espumante para partilhar ao centro da mesa, em Caldas das Taipas, Guimarães. Reserve pelo TheFork ou por telefone.">
+  <meta name="twitter:image" content="https://tabernadastaipas.pt/assets/img/partilha-1200x630.jpg">
+  <meta name="twitter:image:alt" content="Logótipo da Taberna das Taipas ao lado de uma francesinha com ovo e molho, numa taça de grés.">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/young-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -123,6 +140,24 @@
             Ligar para marcar o grupo</a></p>
         </div>
       </div>
+      <!-- ═══ FAIXA SAZONAL: Jantares de Natal de empresa ═══
+           Para desligar depois do Natal, acrescenta o atributo hidden:
+             <aside class="natal" hidden aria-labelledby="t-natal">
+           Para voltar a ligar no próximo ano, tira-o. Com hidden, a foto nem é descarregada. -->
+      <aside class="natal" aria-labelledby="t-natal">
+        <figure class="natal__foto foto">
+          <img src="assets/img/natal-640.webp" srcset="assets/img/natal-640.webp 640w, assets/img/natal-960.webp 960w" sizes="(min-width: 48rem) 16rem, 15rem" width="640" height="853" alt="A entrada da Taberna das Taipas à noite, com uma árvore de Natal de luzes brancas e uma estrela no topo." loading="lazy">
+        </figure>
+        <div class="natal__texto">
+          <h3 id="t-natal">Jantares de Natal de empresa</h3>
+          <p>Juntamos as mesas para a equipa toda, os petiscos vão ao centro e a sangria de espumante fica para o brinde. Combinamos consigo o menu de grupo e o espaço.</p>
+          <p class="natal__nota">As sextas e os sábados costumam encher: marque com antecedência, por telefone. <span class="pc">Datas e menus de Natal</span><span class="sr-only"> (por confirmar)</span> a combinar com a casa.</p>
+          <p class="natal__acao"><a class="btn btn--claro" href="tel:+351937305687" aria-label="Ligar para marcar o jantar de Natal: 937 305 687 (número por confirmar)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            Ligar para marcar o jantar</a></p>
+        </div>
+      </aside>
+      <!-- ═══ fim da faixa sazonal ═══ -->
     </section>
 
     <section class="seccao" id="onde" aria-labelledby="t-onde">
