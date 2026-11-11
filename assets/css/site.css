@@ -408,7 +408,6 @@ p { margin: 0; text-wrap: pretty; }
 .rodape__grelha > :first-child { grid-column: 1 / -1; }
 .rodape h2 { font-size: 1.15rem; color: #fff7ec; margin-bottom: 0.4rem; }
 .rodape__casa img { width: 3.75rem; border-radius: 50%; margin-bottom: 0.9rem; }
-.rodape__por-fazer { display: flex; align-items: center; min-height: 44px; }
 .rodape ul { list-style: none; margin: 0; padding: 0; }
 .rodape a { display: inline-flex; align-items: center; min-height: 44px; }
 .rodape__legenda {
@@ -961,4 +960,40 @@ p { margin: 0; text-wrap: pretty; }
   .pagina-qr .cartao__titulo { font-size: 17pt; }
   .pagina-qr .cartao__passo { font-size: 10.5pt; }
   .pagina-qr .cartao__url, .pagina-qr .cartao__nota { font-size: 8pt; }
+}
+
+/* ——— páginas de texto (privacidade.html) ——— */
+.pagina-texto .cabeca {
+  border-bottom: 1px solid var(--linha);
+  max-width: none;
+  padding-inline: max(var(--borda), (100% - var(--largura)) / 2);
+}
+.texto-legal {
+  padding: clamp(2rem, 6vw, 3.5rem) var(--borda) 0;
+  max-width: calc(44rem + 2 * var(--borda));
+  margin: 0 auto;
+}
+.texto-legal h1 { font-size: clamp(2.4rem, 10vw, 3.75rem); }
+.texto-legal__data { margin-top: 0.75rem; font-size: 0.92rem; color: var(--tinta-suave); }
+.texto-legal__resumo {
+  margin-top: 1.5rem;
+  padding: 1rem 1.15rem;
+  background: var(--painel);
+  border-radius: var(--raio);
+  font-size: 1.08rem;
+}
+.texto-legal section { margin-top: clamp(2.25rem, 6vw, 3rem); }
+.texto-legal h2 { font-size: clamp(1.5rem, 6vw, 1.9rem); margin-bottom: 0.75rem; }
+.texto-legal p + p { margin-top: 0.85rem; }
+.texto-legal a { color: var(--marca); font-weight: 650; }
+.texto-legal__lista { margin: 0.75rem 0 0.85rem; padding-left: 1.2rem; display: grid; gap: 0.5rem; }
+.texto-legal__lista li::marker { color: var(--marca); }
+/* campos ainda por preencher: bem visíveis para não irem assim para o ar */
+.a-preencher {
+  padding: 0.05rem 0.35rem;
+  border: 1px dashed var(--linha-forte);
+  border-radius: 4px;
+  background: var(--painel);
+  font-weight: 700;
+  white-space: nowrap;
 }
