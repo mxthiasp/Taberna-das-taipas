@@ -325,6 +325,15 @@ for (const d of DA_CASA) {
   if (!existe) console.warn(`Aviso: o prato da casa "${d.nome ?? d.comeca + '…'}" (${d.categoria}) já não está no JSON.`);
 }
 
+// Proteção: este gerador é o da v1. Se a ementa.html atual veio de outro gerador
+// (por exemplo o da v2), não a substitui. Para forçar: node scripts/gerar-ementa.mjs --forcar
+let atual = '';
+try { atual = readFileSync(destino, 'utf8').slice(0, 400); } catch { /* ainda não existe */ }
+if (atual && !atual.includes('Gerado por scripts/gerar-ementa.mjs') && !process.argv.includes('--forcar')) {
+  console.error('A ementa.html atual não foi gerada por este script (é da v2). Não foi alterada.');
+  console.error('Este gerador produz a ementa da v1. Para a substituir mesmo assim: node scripts/gerar-ementa.mjs --forcar');
+  process.exit(1);
+}
 writeFileSync(destino, pagina(dados));
 const total = dados.categorias.reduce((n, c) => n + c.itens.length, 0);
 console.log(`ementa.html gerada: ${dados.categorias.length} categorias, ${total} itens, ${marcados.length} da casa.`);
