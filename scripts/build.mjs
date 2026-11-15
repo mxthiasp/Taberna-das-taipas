@@ -1,6 +1,6 @@
 // Build: monta a pasta dist/ só com o que o site precisa, para enviar para o Cloudflare Pages.
 // Uso:  node scripts/build.mjs
-// Publicar: npx wrangler pages deploy dist --project-name tt-prototipo --branch v2
+// Publicar: npx wrangler pages deploy dist --project-name taberna-das-taipas --branch main
 //
 // Fica de fora: conteudo/ (originais), .git, .impeccable, .claude, scripts/, versoes/,
 // os .md do projeto e os ficheiros .json de origem das imagens.

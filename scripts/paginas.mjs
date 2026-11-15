@@ -16,7 +16,10 @@
 // O código QR muda com o endereço: volta a imprimir os cartões das mesas depois de mudar o domínio.
 import { createRequire } from 'node:module';
 
-const SITE_URL_PADRAO = 'https://v2.tt-prototipo.pages.dev';
+// Versão final: projeto Cloudflare Pages taberna-das-taipas (ramo main).
+// O protótipo antigo (projeto tt-prototipo, ramo v2) fica como estava; para o reconstruir usar
+//   SITE_URL=https://v2.tt-prototipo.pages.dev node scripts/build.mjs
+const SITE_URL_PADRAO = 'https://taberna-das-taipas.pages.dev';
 
 export const SITE_URL = (process.env.SITE_URL || SITE_URL_PADRAO).trim().replace(/\/+$/, '');
 if (!/^https:\/\/[^\s/]+$/.test(SITE_URL)) {
