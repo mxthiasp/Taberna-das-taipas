@@ -107,10 +107,16 @@
   }
 
   // 2b. No horário da secção “Onde e quando”, a linha de hoje fica marcada.
-  if (window.Intl) {
+  //     Refaz-se ao voltar à página (pode ter mudado o dia desde que foi aberta).
+  function marcarHoje() {
     try {
       var hoje = DIAS_EN.indexOf(
         new Intl.DateTimeFormat('en-US', { timeZone: 'Europe/Lisbon', weekday: 'short' }).format(new Date()));
+      document.querySelectorAll('.horario .hoje').forEach(function (x) { x.classList.remove('hoje'); });
+      document.querySelectorAll('.horario .hoje__marca').forEach(function (m) {
+        if (m.previousSibling && m.previousSibling.nodeType === 3) m.previousSibling.remove();
+        m.remove();
+      });
       document.querySelectorAll('.horario dt[data-dias]').forEach(function (dt) {
         if (dt.getAttribute('data-dias').split(' ').indexOf(String(hoje)) < 0) return;
         var dd = dt.nextElementSibling;
@@ -125,6 +131,16 @@
       });
     } catch (e) { /* fica o horário sem marca */ }
   }
+  if (window.Intl) marcarHoje();
+
+  // Voltar à página com o gesto de “para trás”: o Safari (e o Chrome) restauram-na da memória
+  // (bfcache) sem correr os scripts de novo. Os temporizadores podem ter parado, por isso
+  // o estado do talão e a marca de hoje acertam-se aqui.
+  window.addEventListener('pageshow', function (ev) {
+    if (!ev.persisted || !window.Intl) return;
+    try { if (el) mostrarEstado(); } catch (e) { /* fica o que estava */ }
+    marcarHoje();
+  });
 
   // 3. O Safari do iPhone só aplica :active (o toque nos botões) quando a página
   //    tem um ouvinte de touchstart. Vazio e passivo: não atrasa o scroll.
@@ -144,6 +160,107 @@
   if (window.ResizeObserver) new ResizeObserver(medir).observe(talao);
   window.addEventListener('resize', medir);
   window.addEventListener('orientationchange', medir);
+  window.addEventListener('pageshow', function (ev) { if (ev.persisted) medir(); });
+})();
+
+// 6. Revelação ao descer: cada bloco (fotografias, pratos da casa, “também da casa”, painel
+//    “Onde e quando”) aparece uma vez, quando entra no ecrã, e fica. O CSS só esconde o que
+//    tem a classe .revelar no <html>, por isso, sem JavaScript, tudo está sempre visível.
+(function () {
+  var raiz = document.documentElement;
+  var calmo = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var blocos = Array.prototype.slice.call(document.querySelectorAll('.foto, .pratos, .tambem, .onde__painel'));
+  // Ao voltar atrás sem a página em memória, o browser repõe a posição só depois deste script:
+  // esconder agora faria piscar o que o visitante já tinha visto. Mostra-se tudo, sem animação.
+  if (!blocos.length || calmo || !window.IntersectionObserver || raiz.classList.contains('voltou')) return;
+
+  var pendentes = blocos.slice();
+  function revelar(b) {
+    b.classList.add('revelado');
+    pendentes.splice(pendentes.indexOf(b), 1);
+    obs.unobserve(b);
+  }
+  // Tudo o que já está no ecrã ou acima dele (um salto para #onde, uma página restaurada
+  // a meio) fica revelado de imediato: nada do que o visitante já viu volta a esconder-se.
+  function varrer(margem) {
+    var limite = window.innerHeight * (margem || 1);
+    pendentes.slice().forEach(function (b) {
+      if (b.getBoundingClientRect().top < limite) revelar(b);
+    });
+  }
+  var obs = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (e) { if (e.isIntersecting && pendentes.indexOf(e.target) >= 0) revelar(e.target); });
+    varrer(0.9);
+  }, { rootMargin: '0px 0px -10% 0px' });
+
+  // primeiro o que já está à vista (sem animação), só depois se liga o esconder
+  varrer(1);
+  if (!pendentes.length) return;
+  raiz.classList.add('revelar');
+  pendentes.forEach(function (b) { obs.observe(b); });
+
+  window.addEventListener('pageshow', function (ev) { if (ev.persisted) varrer(1); });
+  // ao imprimir ou se o separador ficar escondido a meio de uma animação, mostra tudo
+  window.addEventListener('beforeprint', function () { pendentes.slice().forEach(revelar); });
+})();
+
+// 7. Ligações dentro da página (índice da ementa, “Grupos”, “Onde”, “Voltar ao topo”, “Saltar para…”):
+//    deslizam até ao destino e trocam o endereço com replaceState, sem criar entradas no histórico.
+//    Assim, o gesto de “para trás” sai logo da página, em vez de passar por cada categoria.
+//    Um endereço partilhado com #categoria continua a abrir na categoria (é o browser que trata).
+(function () {
+  if (!window.history || !history.replaceState) return;
+  var calmo = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  // Endereços partilhados com o nome “à mão” (#peixes, #Sobremesas, #bebida, #espumantes-e-champanhes):
+  // se não houver um id exatamente igual, procura o mais parecido e corrige o endereço.
+  function norm(s) {
+    return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim().replace(/[\s_]+/g, '-');
+  }
+  function destino(hash) {
+    var id;
+    try { id = decodeURIComponent(hash.replace(/^#/, '')); } catch (e) { id = hash.replace(/^#/, ''); }
+    if (!id) return null;
+    var el = document.getElementById(id);
+    if (el) return el;
+    var n = norm(id);
+    var tentativas = [n, n.replace(/s$/, ''), n.replace(/es$/, ''), n + 's'];
+    for (var i = 0; i < tentativas.length; i++) {
+      el = tentativas[i] && document.getElementById(tentativas[i]);
+      if (el) return el;
+    }
+    return null;
+  }
+  function corrigirEndereco() {
+    if (!location.hash || document.getElementById(location.hash.slice(1))) return;
+    var alvo = destino(location.hash);
+    if (alvo) {
+      history.replaceState(history.state, '', '#' + alvo.id);
+      // salto direto (sem deslizar): é o que o browser faz com um endereço com #
+      var r = document.documentElement, antes = r.style.scrollBehavior;
+      r.style.scrollBehavior = 'auto';
+      alvo.scrollIntoView({ block: 'start' });
+      r.style.scrollBehavior = antes;
+    }
+  }
+  corrigirEndereco();
+  window.addEventListener('hashchange', corrigirEndereco);
+
+  document.addEventListener('click', function (ev) {
+    if (ev.defaultPrevented || ev.button !== 0 || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+    var a = ev.target.closest && ev.target.closest('a[href^="#"]');
+    if (!a) return;
+    var href = a.getAttribute('href');
+    if (href.length < 2) return;
+    var alvo = destino(href);
+    if (!alvo) return;
+    ev.preventDefault();
+    alvo.scrollIntoView({ block: 'start', behavior: calmo && calmo.matches ? 'auto' : 'smooth' });
+    history.replaceState(history.state, '', '#' + alvo.id);
+    // o teclado e os leitores de ecrã continuam a partir do destino, como numa ligação normal
+    if (!alvo.matches('a[href], button, input, select, textarea, [tabindex]')) alvo.setAttribute('tabindex', '-1');
+    alvo.focus({ preventScroll: true });
+  });
 })();
 
 // 4. Ementa: o índice marca a categoria que está no ecrã e, no telemóvel,

@@ -37,6 +37,17 @@
       '</div>' +
       '<p class="pesquisa__estado" aria-live="polite"></p>';
     lado.insertBefore(caixa, indice);
+    // Um endereço partilhado (ementa#peixe) já saltou para a categoria antes de a pesquisa
+    // aparecer por cima; o Safari não compensa essa mudança e a categoria ficava mais abaixo.
+    // Volta a alinhar, só ao abrir (ao voltar atrás, o browser repõe a posição sozinho).
+    var nav = window.performance && performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+    var alvo = location.hash && document.getElementById(location.hash.slice(1));
+    if (alvo && !(nav && nav.type === 'back_forward')) {
+      var r = document.documentElement, antes = r.style.scrollBehavior;
+      r.style.scrollBehavior = 'auto';
+      alvo.scrollIntoView({ block: 'start' });
+      r.style.scrollBehavior = antes;
+    }
 
     var vazio = document.createElement('p');
     vazio.className = 'pesquisa__vazio';

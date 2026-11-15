@@ -98,6 +98,7 @@ a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px
   a:hover { text-decoration-thickness: 2px; }
 }
 
+[tabindex="-1"]:focus { outline: none; }
 :focus-visible { outline: 3px solid var(--marca); outline-offset: 3px; border-radius: 4px; }
 .abertura :focus-visible, .rodape :focus-visible { outline-color: var(--creme); }
 
@@ -446,6 +447,24 @@ p { margin: 0; text-wrap: pretty; }
   .talao__acoes { grid-template-columns: minmax(0, 1fr) auto; }
   .talao__acoes .btn { font-size: 0.95rem; white-space: nowrap; }
 }
+/* Texto aumentado no Safari (aA a 150 % ou mais) ou ecrãs muito estreitos: o menu passa a duas
+   linhas em vez de sair do ecrã, os botões do talão quebram o texto em vez de o cortar e o talão
+   larga o título (os botões já dizem “Reservar”) para não tapar meio ecrã. */
+@media (max-width: 19rem) {
+  .cabeca { flex-wrap: wrap; gap: 0.25rem 0.75rem; }
+  .cabeca__nav ul { flex-wrap: wrap; }
+  .cabeca__nav a { padding: 0 0.45rem; }
+  .talao { padding-top: 0.6rem; gap: 0.45rem; }
+  .talao__titulo { display: none; }
+  .talao__horas { text-align: left; }
+  .talao__acoes { grid-template-columns: minmax(0, 1fr) minmax(0, auto); gap: 0.45rem; }
+  .talao__acoes .btn { white-space: normal; line-height: 1.15; padding: 0.35rem 0.6rem; }
+  main { overflow-wrap: anywhere; }
+  .a-preencher { white-space: normal; }
+  .onde { grid-template-columns: minmax(0, 1fr); }
+  .horario { grid-template-columns: minmax(0, 1fr); row-gap: 0; }
+  .horario dd + dt { margin-top: 0.5rem; }
+}
 
 /* ——— ecrãs médios e largos ——— */
 @media (min-width: 48rem) {
@@ -721,35 +740,42 @@ p { margin: 0; text-wrap: pretty; }
 
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    /* a fotografia de abertura fica para trás ao descer */
+    /* a fotografia de abertura fica para trás ao descer (só desloca, nunca esconde nada) */
     .abertura__foto {
       animation: assenta 1400ms var(--ease-saida) both, paralaxe linear both;
       animation-timeline: auto, view();
       animation-range: normal, exit 0% exit 100%;
     }
-    /* fotografias de secção: revelam-se de baixo para cima e a imagem assenta */
-    .foto {
-      animation: revela linear both;
-      animation-timeline: view();
-      animation-range: entry 5% entry 80%;
-      animation-timing-function: var(--ease-saida);
-    }
-    .foto img {
-      animation: assenta linear both;
-      animation-timeline: view();
-      animation-range: entry 5% cover 40%;
-    }
-    /* cartões dos pratos e linhas de “também da casa” sobem ao entrar */
-    .prato, .tambem, .onde__painel {
-      animation: sobe linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 70%;
-      animation-timing-function: var(--ease-saida);
-    }
+    .voltou .abertura__foto { animation-duration: 0s, auto; }
   }
 }
+
+/* Revelação ao descer, uma vez só. O hoje.js põe .revelar no <html> e .revelado em cada bloco
+   quando ele entra no ecrã; o que já foi revelado nunca volta a esconder-se (nem ao subir, nem
+   ao voltar atrás no Safari, que restaura a página da memória). O que já está no ecrã ao abrir
+   aparece sem animação. Sem JavaScript, ou com movimento reduzido, tudo está visível desde o início.
+   (Antes era uma animação ligada ao scroll: ao subir, os blocos voltavam a esconder-se e piscavam.) */
+@media (prefers-reduced-motion: no-preference) {
+  .revelar :is(.tambem, .onde__painel, .pratos > .prato) {
+    transition: opacity 700ms var(--ease-saida), translate 900ms var(--ease-saida);
+  }
+  .revelar :is(.tambem, .onde__painel):not(.revelado),
+  .revelar .pratos:not(.revelado) > .prato { opacity: 0; translate: 0 1.25rem; }
+  .revelar .pratos > .prato:nth-child(2) { transition-delay: 70ms; }
+  .revelar .pratos > .prato:nth-child(3) { transition-delay: 140ms; }
+  .revelar .pratos > .prato:nth-child(n + 4) { transition-delay: 210ms; }
+  .revelar .foto {
+    clip-path: inset(0 0 0 0 round var(--raio));
+    transition: clip-path 900ms var(--ease-saida), translate 900ms var(--ease-saida);
+  }
+  .revelar .foto:not(.revelado) { clip-path: inset(18% 0 0 0 round var(--raio)); translate: 0 1.5rem; }
+  .revelar .foto img { transition: scale 1400ms var(--ease-saida); }
+  .revelar .foto:not(.revelado) img { scale: 1.07; }
+
+  /* ao voltar atrás sem a página em memória: não repetir a entrada (texto e talão a subir) */
+  .voltou .abertura__texto > *, .voltou .talao, .voltou .item:target { animation: none; }
+}
 @keyframes paralaxe { to { translate: 0 18%; } }
-@keyframes revela { from { clip-path: inset(18% 0 0 0 round var(--raio)); translate: 0 1.5rem; } to { clip-path: inset(0 0 0 0 round var(--raio)); } }
 
 /* ——— faixa escura: “Mesa para o grupo todo” ———
    Uma banda a toda a largura a meio da página, no castanho do rodapé, para o convite aos grupos
