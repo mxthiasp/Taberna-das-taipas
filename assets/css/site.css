@@ -290,13 +290,18 @@ p { margin: 0; text-wrap: pretty; }
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  /* enquadramento por foto (no style da <img>): --foco = object-position, --zoom e --origem = aproximar
+     à volta de um ponto, para o prato ficar centrado e encher o cartão como os outros */
+  object-position: var(--foco, 50% 50%);
+  scale: var(--zoom, 1);
+  transform-origin: var(--origem, 50% 50%);
   transition: scale 600ms var(--ease-saida), filter 200ms var(--ease-saida);
 }
-.prato:has(.prato__ligacao:active) img { filter: brightness(0.9); scale: 1.02; }
+.prato:has(.prato__ligacao:active) img { filter: brightness(0.9); scale: calc(var(--zoom, 1) * 1.02); }
 .prato:has(.prato__ligacao:active) .prato__ligacao { text-decoration: underline; text-decoration-thickness: 1.5px; }
 @media (hover: hover) and (pointer: fine) {
   .prato:hover .prato__ligacao { text-decoration: underline; text-decoration-thickness: 1.5px; }
-  .prato:hover img { scale: 1.04; }
+  .prato:hover img { scale: calc(var(--zoom, 1) * 1.04); }
 }
 .prato h3 { font-size: 1.3rem; line-height: 1.15; }
 .prato p { font-size: 0.95rem; color: var(--tinta-suave); line-height: 1.4; }
